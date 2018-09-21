@@ -1,9 +1,78 @@
 /*帖子列表模板*/
 
-.cardlist {
+.content1 {
 	width: 980px;
 	margin: auto;
+	position: relative;
+}
+.aside-massage {
+	padding: 20px 15px;
+	width: 188px;
 	background-color: white;
+	position: relative;
+}
+.look {
+	margin-left: 50px;
+	color: #2d64b3;
+	cursor: pointer;
+}
+.look1 {
+	position: absolute;
+	top: 35px;
+	left: 15px;
+	cursor: pointer;
+}
+.look2 {
+	position: absolute;
+	top: 35px;
+	left: 75px;
+	cursor: pointer;
+}
+.look3 {
+	position: absolute;
+	top: 35px;
+	left: 135px;
+	cursor: pointer;
+}
+.look1 div,.look2 div,.look3 div {
+	text-align: center;
+}
+.aside-massage img {
+	margin: 10px 0px 0px 5px;
+	width: 50px;
+	height: 50px;
+}
+.look5 {
+	margin: 5px 0px 5px 7px;
+}
+.look5 span {
+	color: #2d64b3;
+	cursor: pointer;
+}
+.look4 {
+	margin: 85px 0px 0px 8px;
+}
+.aside1 {
+	width: 219px;
+	position: absolute;
+	top: 0px;
+    left: 761px;
+}
+.aside-massage,.aside1-img {
+	border-left: 1px solid gray;
+	border-top: 1px solid gray;
+	border-right: 1px solid gray;
+}
+.lastimg {
+	border-bottom: 1px solid gray;
+}
+.cardlist {
+	position: relative;
+	width: 760px;
+	margin-right: 1px;
+	background-color: white;
+	border-left: 1px solid gray;
+	border-top: 1px solid gray;
 }
 
 .list {
@@ -15,6 +84,12 @@
 
 .list:hover {
 	background-color: #F2F4F7;
+}
+
+.page {
+	text-align: center;
+	margin: 20px auto;
+	border-bottom: 1px solid gray;
 }
 
 .layui-badge {
@@ -31,22 +106,27 @@
 	width: 460px;
 	padding: 20px 0px 20px 100px;
 }
+
 .cardname {
 	color: #2d64b3;
 	cursor: pointer;
 }
+
 .cardname:hover {
 	color: #2d64b3;
 	text-decoration: underline;
 }
+
 .listtext p {
 	margin-top: 10px;
 }
+
 .carduser {
 	position: absolute;
 	top: 20px;
 	left: 575px;
 }
+
 .carduser-img {
 	width: 20px;
 	height: 20px;
@@ -54,17 +134,20 @@
 	background-image: url(../img/thread_list_z_eca48fe.png);
 	background-position: -35px 23px;
 }
+
 .carduser-name {
 	width: 100px;
 	position: absolute;
 	top: 0px;
 	left: 25px;
 }
+
 .cardback {
 	position: absolute;
 	top: 50px;
 	left: 575px;
 }
+
 .cardback-img {
 	width: 20px;
 	height: 20px;
@@ -72,21 +155,27 @@
 	background-image: url(../img/thread_list_z_eca48fe.png);
 	background-position: 0px 23px;
 }
+
 .cardback-name {
 	width: 100px;
 	position: absolute;
 	top: 0px;
 	left: 25px;
 }
+
 .cardtime {
 	position: absolute;
 	top: 50px;
 	left: 700px;
 }
-.cardback,.cardtime,.carduser {
+
+.cardback,
+.cardtime,
+.carduser {
 	color: gray;
 	cursor: pointer;
 }
+
 
 /*发表*/
 
@@ -166,19 +255,21 @@
 .publish-input {
 	position: relative;
 }
+
 .publish-input input[type="checkbox"] {
 	position: absolute;
 	top: 1px;
 }
+
 .publish-input span {
 	display: inline-block;
 	margin: 10px 0px 0px 20px;
 	color: gray;
 	font-size: 14px;
 }
+
 .publish-input button {
 	position: absolute;
 	top: 30px;
 	left: 0px;
 }
-
