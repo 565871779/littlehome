@@ -21,14 +21,14 @@ app.engine('html', ejs.renderFile);
 app.set('view engine', 'html');
 app.set('views', './views');
 //数据库连接
-//global.conn = mysql.createConnection({
-//  host:'localhost',
-//  user:'root',
-//  password:'123456',
-//  port:3306,
-//  database:'smallhome'
-//});
-//conn.connect();
+global.conn = mysql.createConnection({
+    host:'localhost',
+    user:'root',
+    password:'a58893071',
+    port:3306,
+    database:'smllhome'
+});
+conn.connect();
 //启用session
 app.use(session({
     secret:secret,
@@ -38,16 +38,16 @@ app.use(session({
 }));
 
 //文件上传
-const diskstorage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, `./uploads/${new Date().getFullYear()}/${(new Date().getMonth()+1).toString().padStart(2, '0')}`);
-    },
-    filename: function (req, file, cb) {
-        let filename = new Date().valueOf() + '_' +  Math.random().toString().substr(2, 8) + '.' + file.originalname.split('.').pop();
-        cb(null, filename)
-    }
-});
-const upload = multer({storage: diskstorage});
+//const diskstorage = multer.diskStorage({
+//  destination: function (req, file, cb) {
+//      cb(null, `./uploads/${new Date().getFullYear()}/${(new Date().getMonth()+1).toString().padStart(2, '0')}`);
+//  },
+//  filename: function (req, file, cb) {
+//      let filename = new Date().valueOf() + '_' +  Math.random().toString().substr(2, 8) + '.' + file.originalname.split('.').pop();
+//      cb(null, filename)
+//  }
+//});
+//const upload = multer({storage: diskstorage});
 // 验证码图片
 app.get('/coder', (req, res) => {
     var captcha = svgCaptcha.create({noise:4,ignoreChars: '0o1i', size:1,background: '#cc9966',height:38, width:90});
@@ -59,19 +59,19 @@ app.get('/coder', (req, res) => {
 });
 
 // 上传图片接口
-app.post('/uploads', upload.array('images', 1000), (req ,res)=>{
-    console.log(req.files);
-    let data = [];
-    for (const ad of req.files) {
-        //把反斜线转成斜线，防止各种转义引起的路径错误
-        let path = hostname +  ad.path.replace(/\\/g, '/');
-        data.push(path);
-    }
-    res.json({
-        "errno": 0,
-        "data": data
-    });
-});
+//app.post('/uploads', upload.array('images', 1000), (req ,res)=>{
+//  console.log(req.files);
+//  let data = [];
+//  for (const ad of req.files) {
+//      //把反斜线转成斜线，防止各种转义引起的路径错误
+//      let path = hostname +  ad.path.replace(/\\/g, '/');
+//      data.push(path);
+//  }
+//  res.json({
+//      "errno": 0,
+//      "data": data
+//  });
+//});
 //方便测试---后面要删除
 // app.use(function(req ,res, next){
 //     req.session.aid = 1;
@@ -84,9 +84,9 @@ app.post('/uploads', upload.array('images', 1000), (req ,res)=>{
 app.use('/login', require('./module/login'));
 
 //首页
-app.use('/index', require('./module/index'));
+//app.use('/index', require('./module/index'));
 //试题部分
-app.use('/userCenter', require('./module/userCenter'));
+//app.use('/userCenter', require('./module/userCenter'));
 
 
 //静态资源托管

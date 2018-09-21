@@ -1,3 +1,93 @@
-.btn{
-	width: 300px;
-}
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.wrap {
+				width: 100%;
+				height: 520px;
+				background: url("../img/dlbg.jpg") center;
+				/*背景图片*/
+			}
+			
+			.wrap-main {
+				/*position:absolute;觉对定位*/
+				width: 80%;
+				height: 520px;
+				margin: 0 auto;
+				/*上下 左右*/
+				overflow: hidden;
+				/*超出部分隐藏*/
+			}
+			
+			.login {
+				/* float:right;右浮动 */
+				/* position:absolute;绝对定位
+			right:0; */
+				overflow: hidden;
+				width: 600px;
+				height: 500px;
+				background: #fff;
+				margin: auto;
+				margin-top: 100px;
+			}
+			
+			.login-info {
+				height: 220px;
+				/* background:red; */
+				border-bottom: 1px dotted #999;
+			}
+			
+			input {
+				display: block;
+				/*转换成块级元素*/
+				width: 300px;
+				height: 38px;
+				margin: 30px auto;
+				border-radius: 5px;
+				/*CSS3新增圆角属性*/
+			}
+			
+			input[name="username"] {
+				background: url("../img/zhanghao.jpg") no-repeat;
+				text-indent: 50px;
+				border: 1px solid #ccc;
+				background-position-y: -2px;
+			}
+			
+			input[name="pwd"] {
+				background: url("../img/mima.jpg") no-repeat;
+				text-indent: 50px;
+				border: 1px solid #ccc;
+				background-position-y: -2px;
+			}
+			
+			input[name="submit"] {
+				background: url("../img/but.jpg") center;
+				border: 0;
+			}
+			
+			.content {
+				width: 260px;
+				margin: 115px auto;
+				font-size: 14px;
+			}
+			
+			i {
+				display: inline-block;
+				/*转换位行内块元素*/
+				width: 32px;
+				height: 32px;
+			}
+			
+			i.wechat {
+				background: url("../img/weixin.png");
+			}
+			
+			i.tencent {
+				background: url("../img/qqlogin.png");
+			}
+			
+			i.taobao {
+				background: url("../img/taobao.png");
+			}
