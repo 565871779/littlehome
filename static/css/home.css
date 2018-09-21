@@ -1,0 +1,184 @@
+/*帖子列表模板*/
+
+.cardlist {
+	width: 980px;
+	margin: auto;
+	background-color: white;
+}
+
+.list {
+	width: 760px;
+	position: relative;
+	border-bottom: 1px dashed gray;
+	z-index: 666;
+}
+
+.list:hover {
+	background-color: #F2F4F7;
+}
+
+.layui-badge {
+	width: 50px;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	background-color: #6f8e8b!important;
+}
+
+.listtext {
+	width: 460px;
+	padding: 20px 0px 20px 100px;
+}
+.cardname {
+	color: #2d64b3;
+	cursor: pointer;
+}
+.cardname:hover {
+	color: #2d64b3;
+	text-decoration: underline;
+}
+.listtext p {
+	margin-top: 10px;
+}
+.carduser {
+	position: absolute;
+	top: 20px;
+	left: 575px;
+}
+.carduser-img {
+	width: 20px;
+	height: 20px;
+	background-size: 100px 96px;
+	background-image: url(../img/thread_list_z_eca48fe.png);
+	background-position: -35px 23px;
+}
+.carduser-name {
+	width: 100px;
+	position: absolute;
+	top: 0px;
+	left: 25px;
+}
+.cardback {
+	position: absolute;
+	top: 50px;
+	left: 575px;
+}
+.cardback-img {
+	width: 20px;
+	height: 20px;
+	background-size: 100px 96px;
+	background-image: url(../img/thread_list_z_eca48fe.png);
+	background-position: 0px 23px;
+}
+.cardback-name {
+	width: 100px;
+	position: absolute;
+	top: 0px;
+	left: 25px;
+}
+.cardtime {
+	position: absolute;
+	top: 50px;
+	left: 700px;
+}
+.cardback,.cardtime,.carduser {
+	color: gray;
+	cursor: pointer;
+}
+
+/*发表*/
+
+.last {
+	width: 980px;
+	padding-top: 20px;
+	margin: 20px auto 50px;
+	background-image: url(../img/f_editor_94fd854.jpg);
+}
+
+.publish {
+	height: 530px;
+	margin-left: 20px;
+}
+
+.publish1,
+.publish3 {
+	display: inline-block;
+	margin-top: 2px;
+	width: 14px;
+	height: 14px;
+	background-image: url(../img/poster_icons_4ca8924.png);
+}
+
+.publish3 {
+	background-position: 0px 30px;
+	margin-left: 20px;
+}
+
+.publish4 {
+	cursor: pointer;
+}
+
+.publish5 {
+	margin-left: 260px;
+}
+
+.publish6,
+.publish7 {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.publish7 {
+	margin-left: 35px;
+}
+
+.publish-name {
+	display: inline-block;
+	border: 1px solid #adadad;
+	margin-top: 15px;
+	width: 670px;
+	height: 30px;
+}
+
+.publish-name1 {
+	display: inline-block;
+	width: 46px;
+	height: 20px;
+	background-image: url(../img/icon_topic_n_fd30738.png);
+	position: absolute;
+	top: -2px;
+	left: 680px;
+	cursor: pointer;
+}
+
+.publish-text {
+	width: 740px;
+	margin-top: 20px;
+	background-color: white;
+}
+
+.w-e-toolbar .w-e-menu i {
+	color: #009688!important;
+}
+
+.publish-input {
+	position: relative;
+}
+.publish-input input[type="checkbox"] {
+	position: absolute;
+	top: 1px;
+}
+.publish-input span {
+	display: inline-block;
+	margin: 10px 0px 0px 20px;
+	color: gray;
+	font-size: 14px;
+}
+.publish-input button {
+	position: absolute;
+	top: 30px;
+	left: 0px;
+}
+
