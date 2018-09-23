@@ -56,8 +56,8 @@
 .aside1 {
 	width: 220px;
 	position: absolute;
-	top: 367px;
-    left: 946px;
+	top: 0px;
+    left: 761px;
 }
 .aside-massage,.aside1-img {
 	border-bottom: 1px solid #bbbdbf;
