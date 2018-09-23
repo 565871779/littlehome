@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8" />
 		<title>home</title>
 
-<% include head.html%>
+		<% include head.html%>
 
-
-<link rel="stylesheet" type="text/css" href="/css/home.css" />
+		<link rel="stylesheet" type="text/css" href="/css/home.css" />
 		<div class="content1">
 			<div class="cardlist">
 				<div class="list">
@@ -20,112 +20,112 @@
 						<div class="carduser-img"></div>
 						<div class="carduser-name">楼主</div>
 					</div>
-		<div class="carddel">
-			<div class="cardback-name">
-				<a href="">删除</a>
-			</div>
-		</div>
-		<div class="carddig">
-			<div class="cardback-name">
-				<a href="">加精</a>
-			</div>
-		</div>
-		<div class="cardback">
-			<div class="cardback-img"></div>
-			<div class="cardback-name">最后回复人</div>
-		</div>
-		<div class="cardtime">
-			时间
-		</div>
-	</div>
-	<%for(let c of clist){%>
-	<div class="list">
-		<p title="回复" class="layui-badge layui-bg-green"><span><%=c.tnum%></span></p>
-		<div class="listtext">
-			<a class="cardname">
-				<%=c.title%>
-			</a>
-			<p>
-				<%-c.content%>
-			</p>
-		</div>
-		<div class="carduser">
-			<div class="carduser-img"></div>
-			<div class="carduser-name">
-				<%=c.tuname%>
-			</div>
-		</div>
-		<%if(admin){%>
-		<div class="carddel">
-			<div class="cardback-name">
-				<a href="javascript:void(0)" data-tid=<%=c.tid%>>删除</a>
-			</div>
-		</div>
-		<div class="carddig">
-			<div class="cardback-name">
-				<%if(!(c.digest*1)){%>
-				<a href="javascript:void(0)" data-tid=<%=c.tid%>>加精</a>
-				<%}else{%>
-				<a href="javascript:void(0)" data-tid=<%=c.tid%>>取消加精</a>
+					<div class="carddel">
+						<div class="cardback-name">
+							<a href="">删除</a>
+						</div>
+					</div>
+					<div class="carddig">
+						<div class="cardback-name">
+							<a href="">加精</a>
+						</div>
+					</div>
+					<div class="cardback">
+						<div class="cardback-img"></div>
+						<div class="cardback-name">最后回复人</div>
+					</div>
+					<div class="cardtime">
+						时间
+					</div>
+				</div>
+				<%for(let c of clist){%>
+				<div class="list">
+					<p title="回复" class="layui-badge layui-bg-green"><span><%=c.tnum%></span></p>
+					<div class="listtext">
+						<a class="cardname">
+							<%=c.title%>
+						</a>
+						<p>
+							<%-c.content%>
+						</p>
+					</div>
+					<div class="carduser">
+						<div class="carduser-img"></div>
+						<div class="carduser-name">
+							<%=c.tuname%>
+						</div>
+					</div>
+					<%if(admin){%>
+					<div class="carddel">
+						<div class="cardback-name">
+							<a href="javascript:void(0)" data-tid=<%=c.tid%>>删除</a>
+						</div>
+					</div>
+					<div class="carddig">
+						<div class="cardback-name">
+							<%if(!(c.digest*1)){%>
+							<a href="javascript:void(0)" data-tid=<%=c.tid%>>加精</a>
+							<%}else{%>
+							<a href="javascript:void(0)" data-tid=<%=c.tid%>>取消加精</a>
+							<%}%>
+						</div>
+					</div>
+					<%}%>
+					<div class="cardback">
+						<div class="cardback-img"></div>
+						<div class="cardback-name">
+							<%=c.lastuser%>
+						</div>
+					</div>
+					<div class="cardtime">
+						<p>
+							<%=c.lastreplaytime.toLocaleTimeString()%>
+						</p>
+					</div>
+				</div>
 				<%}%>
 			</div>
-		</div>
-		<%}%>
-		<div class="cardback">
-			<div class="cardback-img"></div>
-			<div class="cardback-name">
-				<%=c.lastuser%>
+
+			<div class="layui-btn-container page">
+				<button class="layui-btn">首页</button>
+				<button class="layui-btn"><i class="layui-icon">&#xe603;</i></button>
+				<button class="layui-btn">1</button>
+				<button class="layui-btn">2</button>
+				<button class="layui-btn">3</button>
+				<button class="layui-btn">4</button>
+				<button class="layui-btn">5</button>
+				<button class="layui-btn"><i class="layui-icon">&#xe602;</i></button>
+				<button class="layui-btn">尾页</button>
 			</div>
 		</div>
-		<div class="cardtime">
-			<p>
-				<%=c.lastreplaytime.toLocaleTimeString()%>
-			</p>
-		</div>
-	</div>
-	<%}%>
-</div>
-				
-				<div class="layui-btn-container page">
-					<button class="layui-btn">首页</button>
-					<button class="layui-btn"><i class="layui-icon">&#xe603;</i></button>
-					<button class="layui-btn">1</button>
-					<button class="layui-btn">2</button>
-					<button class="layui-btn">3</button>
-					<button class="layui-btn">4</button>
-					<button class="layui-btn">5</button>
-					<button class="layui-btn"><i class="layui-icon">&#xe602;</i></button>
-					<button class="layui-btn">尾页</button>
+		<div class="aside1">
+			<div class="aside-massage">
+				<span>本吧信息</span>
+				<a class="look">查看详情>></a>
+				<div class="look1">
+					<img src="/img/timg.gif" />
+					<div>name</div>
 				</div>
-			</div>
-			<div class="aside1">
-				<div class="aside-massage">
-					<span>本吧信息</span>
-					<a class="look">查看详情>></a>
-					<div class="look1">
-						<img src="#" />
-						<div>name</div>
-					</div>
-					<div class="look2">
-						<img src="#" />
-						<div>name</div>
-					</div>
-					<div class="look3">
-						<img src="#" />
-						<div>name</div>
-					</div>
-					<p class="look4">小吧：小吧主共<span>??</span>人</p>
-					<p class="look5">会员：<span>电影人</span></p>
-					<p class="look5">目录：<span>电影话题</span></p>
-					<p class="look5">| <span>申请小吧主</span></p>
+				<div class="look2">
+					<img src="/img/timg.gif" />
+					<div>name</div>
 				</div>
-				<img class="aside1-img" src="../static/img/1172404.png" />
-				<img class="aside1-img" src="../static/img/1172545.png" />
-				<img class="aside1-img" src="../static/img/1172626.png" />
-				<img class="aside1-img" src="../static/img/172708.png" />
-				<img class="aside1-img" src="../static/img/72816.png" />
-				<img class="aside1-img lastimg" src="../static/img/70502.png" />
+				<div class="look3">
+					<img src="/img/timg.gif" />
+					<div>name</div>
+				</div>
+				<p class="look4">小吧：小吧主共<span>??</span>人</p>
+				<p class="look5">会员：<span>电影人</span></p>
+				<p class="look5">目录：<span>电影话题</span></p>
+				<p class="look5">| <span>申请小吧主</span></p>
 			</div>
+			<img class="aside1-img" src="/img/1172404.png" />
+			<img class="aside1-img" src="/img/1172545.png" />
+			<img class="aside1-img" src="/img/1172626.png" />
+			<img class="aside1-img" src="/img/172708.png" />
+			<img class="aside1-img" src="/img/72816.png" />
+			<img class="aside1-img lastimg" src="/img/70502.png" />
+		</div>
 		</div>
 
 		<div class="last">
@@ -140,11 +140,11 @@
 					<a class="publish7">贴吧投诉</a>
 				</div>
 				<from class="publish-input">
-			<input title="请输入标题" type="text" name="title" id="title" required lay-verify="required" placeholder="请输入标题" class="layui-input publish-name">
-			<a class="publish-name1"></a>
-			<div class="publish-text"><span>请输入内容</span></div>
-			<input type="checkbox" name="agree"><span>发表后自动分享本贴</span>
-			<button class="layui-btn release-btn" id="publish" type="button">发表</button>
+					<input title="请输入标题" type="text" name="title" id="title" required lay-verify="required" placeholder="请输入标题" class="layui-input publish-name">
+					<a class="publish-name1"></a>
+					<div class="publish-text"><span>请输入内容</span></div>
+					<input type="checkbox" name="agree"><span>发表后自动分享本贴</span>
+					<button class="layui-btn release-btn" id="publish" type="button">发表</button>
 				</from>
 			</div>
 
@@ -157,134 +157,137 @@
 				<a pv_code="0" href="/tb/zt/declare/" target="_blank">网络谣言警示</a>
 			</div>
 		</div>
-	<% include footer.html%>
-	<script src="//unpkg.com/wangeditor/release/wangEditor.min.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript">
-		let br = $("br");
-		$(".list img").css("width", 150);
-		$(".listtext img").before(br);
-		var E = window.wangEditor;
-		var editor = new E('.publish-text');
-		editor.customConfig.uploadImgServer = '/uploads';
-		editor.customConfig.uploadFileName = 'images';
-		editor.create();
-		$(".publish-text").click(function() {
-			$(".publish-text span").remove();
-		})
-		$("#publish").click(function() {
-			$(".publish-text span").remove();
-			if(!$("#title").val()) {
-				alert("标题不能为空");
-				return;
-			}
-			if(!editor.txt.html()) {
-				editor.txt.html($("#title").val());
-			}
-			data1 = {
-				title: $("#title").val(),
-				content: editor.txt.html()
-			}
-			$.ajax({
-				type: "post",
-				url: "/publish",
-				async: true,
-				dataType: "JSON",
-				data: data1,
-				success: function(data) {
-					if(data.r == 'ok') {
-						window.location.href = '/index';
-						alert("发帖成功！")
+		<% include footer.html%>
+		<script src="//unpkg.com/wangeditor/release/wangEditor.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			let br = $("br");
+			$(".list img").css("width", 150);
+			$(".listtext img").before(br);
+			var E = window.wangEditor;
+			var editor = new E('.publish-text');
+			editor.customConfig.uploadImgServer = '/uploads';
+			editor.customConfig.uploadFileName = 'images';
+			editor.create();
+			$(".publish-text").click(function() {
+				$(".publish-text span").remove();
+			})
+			$("#publish").click(function() {
+				$(".publish-text span").remove();
+				if(!$("#title").val()) {
+					alert("标题不能为空");
+					return;
+				}
+				if(!editor.txt.html()) {
+					editor.txt.html($("#title").val());
+				}
+				data1 = {
+					title: $("#title").val(),
+					content: editor.txt.html()
+				}
+				$.ajax({
+					type: "post",
+					url: "/publish",
+					async: true,
+					dataType: "JSON",
+					data: data1,
+					success: function(data) {
+						if(data.r == 'ok') {
+							window.location.href = '/index';
+							alert("发帖成功！")
+						}
+					},
+					fail: function(err) {
+						console.log(err);
+
 					}
-				},
-				fail: function(err) {
-					console.log(err);
+				});
+
+				console.log(editor.txt.html())
+			})
+			$(".carddel a").click(function() {
+
+				let This = this;
+				if(confirm("确认删除该贴吗?")) {
+
+					$.ajax({
+						type: "post",
+						url: "/publish/del",
+						async: true,
+						dataType: "JSON",
+						data: {
+							tid: $(This).attr("data-tid")
+						},
+						success: function(data) {
+							if(data.r == 'ok') {
+								window.location.href = '/index';
+								alert("删除成功！")
+							}
+						},
+						fail: function(err) {
+							console.log(err);
+
+						}
+					});
 
 				}
-			});
 
-			console.log(editor.txt.html())
-		})
-		$(".carddel a").click(function() {
-			
-			let This = this;
-			if(confirm("确认删除该贴吗?")) {
-				
-				
-				$.ajax({
-					type: "post",
-					url: "/publish/del",
-					async: true,
-					dataType: "JSON",
-					data: {tid:$(This).attr("data-tid")},
-					success: function(data) {
-						if(data.r == 'ok') {
-							window.location.href = '/index';
-							alert("删除成功！")
-						}
-					},
-					fail: function(err) {
-						console.log(err);
+			})
+			$(".carddig a").click(function() {
+				let This = this;
+				if($(This).html() == "加精") {
+					if(confirm("确认将该贴加精吗?")) {
 
-					}
-				});
+						$.ajax({
+							type: "post",
+							url: "/publish/dig",
+							async: true,
+							dataType: "JSON",
+							data: {
+								tid: $(This).attr("data-tid")
+							},
+							success: function(data) {
+								if(data.r == 'ok') {
+									window.location.href = '/index';
+									alert("加精成功！")
+								}
+							},
+							fail: function(err) {
+								console.log(err);
 
-			}
-
-		})
-		$(".carddig a").click(function() {
-			let This = this;
-			if($(This).html()=="加精"){
-			if(confirm("确认将该贴加精吗?")) {
-				
-				
-				$.ajax({
-					type: "post",
-					url: "/publish/dig",
-					async: true,
-					dataType: "JSON",
-					data: {tid:$(This).attr("data-tid")},
-					success: function(data) {
-						if(data.r == 'ok') {
-							window.location.href = '/index';
-							alert("加精成功！")
-						}
-					},
-					fail: function(err) {
-						console.log(err);
+							}
+						});
 
 					}
-				});
+				}
+				if($(This).html() == "取消加精") {
+					if(confirm("确认将该贴加精取消吗?")) {
 
-			}
-			}
-			if($(This).html()=="取消加精"){
-			if(confirm("确认将该贴加精取消吗?")) {
-				
-				
-				$.ajax({
-					type: "post",
-					url: "/publish/digcancel",
-					async: true,
-					dataType: "JSON",
-					data: {tid:$(This).attr("data-tid")},
-					success: function(data) {
-						if(data.r == 'ok') {
-							window.location.href = '/index';
-							alert("取消加精成功！")
-						}
-					},
-					fail: function(err) {
-						console.log(err);
+						$.ajax({
+							type: "post",
+							url: "/publish/digcancel",
+							async: true,
+							dataType: "JSON",
+							data: {
+								tid: $(This).attr("data-tid")
+							},
+							success: function(data) {
+								if(data.r == 'ok') {
+									window.location.href = '/index';
+									alert("取消加精成功！")
+								}
+							},
+							fail: function(err) {
+								console.log(err);
+
+							}
+						});
 
 					}
-				});
+				}
 
-			}
-			}
-
-		})
-		// 读取 html
+			})
+			// 读取 html
 		</script>
-	</body>
+		</body>
 
 </html>
