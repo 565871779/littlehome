@@ -105,6 +105,10 @@
 }
 
 .cardname {
+	max-width: 410px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;	
 	color: #2d64b3;
 	cursor: pointer;
 }
@@ -114,7 +118,7 @@
 	text-decoration: underline;
 }
 
-.listtext p {
+.cardtext {
 	margin-top: 10px;
 }
 

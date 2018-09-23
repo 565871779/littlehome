@@ -13,8 +13,8 @@
 				<div class="list">
 					<p title="回复" class="layui-badge layui-bg-green"><span>2111</span></p>
 					<div class="listtext">
-						<a class="cardname">标题</a>
-						<p>杜甫的思<br />想核心是儒家的仁<br />政思想，<br />他有“<em>致君尧舜上，再使风俗淳</em>”的宏伟抱负。想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁</p>
+						<p class="cardname">标题:致君尧舜上，再使风俗淳致君尧舜上，再使风俗淳想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁</p>
+						<p class="cardtext">杜甫的思<br />想核心是儒家的仁<br />政思想，<br />他有“<em>致君尧舜上，再使风俗淳</em>”的宏伟抱负。想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁</p>
 					</div>
 					<div class="carduser">
 						<div class="carduser-img"></div>
@@ -42,10 +42,10 @@
 				<div class="list">
 					<p title="回复" class="layui-badge layui-bg-green"><span><%=c.tnum%></span></p>
 					<div class="listtext">
-						<a class="cardname">
+						<p class="cardname">
 							<%=c.title%>
-						</a>
-						<p>
+						</p>
+						<p class="cardtext">
 							<%-c.content%>
 						</p>
 					</div>
@@ -85,7 +85,8 @@
 				</div>
 				<%}%>
 			</div>
-
+			
+			<!--页数显示-->
 			<div class="layui-btn-container page">
 				<button class="layui-btn">首页</button>
 				<button class="layui-btn"><i class="layui-icon">&#xe603;</i></button>
@@ -97,6 +98,8 @@
 				<button class="layui-btn"><i class="layui-icon">&#xe602;</i></button>
 				<button class="layui-btn">尾页</button>
 			</div>
+			
+			<!--侧边栏信息-->
 			<div class="aside1">
 				<div class="aside-massage">
 					<span>本吧信息</span>
@@ -127,6 +130,7 @@
 			</div>
 		</div>
 
+		<!--发表帖子及footer-->
 		<div class="last">
 			<div class="publish">
 				<div class="publish-head">

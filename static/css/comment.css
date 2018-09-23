@@ -7,18 +7,20 @@
 	border: 1px solid #bbbdbf;
 	background-color: #f5f7fa;
 }
+
 .cardlist {
 	position: relative;
 	width: 760px;
 	margin-right: 1px;
-	background-color: white;
 }
+
 .aside1 {
 	width: 219px;
 	position: absolute;
 	top: 0px;
-    left: 761px;
+	left: 761px;
 }
+
 .aside-massage {
 	padding: 20px 15px;
 	width: 188px;
@@ -33,11 +35,13 @@
 	cursor: pointer;
 }
 
-.look2 div,.look3 div {
+.look2 div,
+.look3 div {
 	width: 20px;
 	height: 20px;
 	background-image: url(../img/tb_common_z_01f0eaf.png);
 }
+
 .look2 div {
 	position: absolute;
 	top: 55px;
@@ -45,6 +49,7 @@
 	cursor: pointer;
 	background-position: 107px -26px;
 }
+
 .look3 div {
 	position: absolute;
 	top: 80px;
@@ -52,6 +57,7 @@
 	cursor: pointer;
 	background-position: 127px -136px;
 }
+
 .look2 p {
 	width: 65px;
 	height: 16px;
@@ -60,6 +66,7 @@
 	left: 136px;
 	cursor: pointer;
 }
+
 .look3 p {
 	color: orange;
 	width: 65px;
@@ -69,13 +76,17 @@
 	left: 136px;
 	cursor: pointer;
 }
+
 .look1 img {
 	width: 84px;
 	height: 84px;
 }
-.aside-massage,.aside1-img {
+
+.aside-massage,
+.aside1-img {
 	border-bottom: 1px solid gray;
 }
+
 .page {
 	width: 760px;
 	text-align: center;
@@ -83,19 +94,58 @@
 	border-right: 1px solid #bbbdbf;
 }
 
+
 /*评论显示区*/
+
+.card-author {
+	background-color: white;
+	position: relative;
+	padding: 20px;
+	border-right: 1px solid #bbbdbf;
+	border-bottom: 1px solid #bbbdbf;
+}
+
+.card-author p {
+	max-width: 440px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	height: 26px;
+	font-size: 20px;
+}
+
+.card-author-button1 {
+	position: absolute;
+	top: 20px;
+	left: 495px;
+}
+
+.card-author-button2 {
+	position: absolute;
+	top: 20px;
+	left: 580px;
+}
+
+.card-author-button3 {
+	position: absolute;
+	top: 20px;
+	left: 650px;
+}
 
 .list {
 	width: 760px;
 	position: relative;
-	border-bottom: 1px dashed #bbbdbf;
+	border-bottom: 1px solid #bbbdbf;
 	border-right: 1px solid #bbbdbf;
 	z-index: 666;
+	background-color: #fafbfc;
 }
 
 .person {
 	width: 130px;
-	background-color: #fafbfc;
+	position: absolute;
+	top: 0px;
+	left: 0px;
 }
 
 .person img {
@@ -103,6 +153,7 @@
 	height: 88px;
 	margin: 20px;
 }
+
 .person p {
 	width: 88px;
 	padding-bottom: 50px;
@@ -110,82 +161,26 @@
 	margin: auto;
 }
 
-
-/*
-.listtext {
-	width: 460px;
-	padding: 20px 0px 20px 100px;
+.person-card {
+	background-color: white;
+	position: relative;
+	width: 630px;
+	left: 130px;
 }
 
-.cardname {
-	color: #2d64b3;
-	cursor: pointer;
+.comment-text {
+	padding: 30px 20px 100px;
 }
 
-.cardname:hover {
-	color: #2d64b3;
-	text-decoration: underline;
-}
-
-.listtext p {
-	margin-top: 10px;
-}
-
-.carduser {
-	position: absolute;
-	top: 20px;
-	left: 575px;
-}
-
-.carduser-img {
-	width: 20px;
-	height: 20px;
-	background-size: 100px 96px;
-	background-image: url(../img/thread_list_z_eca48fe.png);
-	background-position: -35px 23px;
-}
-
-.carduser-name {
-	width: 100px;
-	position: absolute;
-	top: 0px;
-	left: 25px;
-}
-
-.cardback {
-	position: absolute;
-	top: 50px;
-	left: 575px;
-}
-
-.cardback-img {
-	width: 20px;
-	height: 20px;
-	background-size: 100px 96px;
-	background-image: url(../img/thread_list_z_eca48fe.png);
-	background-position: 0px 23px;
-}
-
-.cardback-name {
-	width: 100px;
-	position: absolute;
-	top: 0px;
-	left: 25px;
-}
-
-.cardtime {
-	position: absolute;
-	top: 50px;
-	left: 700px;
-}
-
-.cardback,
-.cardtime,
-.carduser {
+.comment-massage {
+	position: relative;
+	padding-bottom: 12px;
 	color: gray;
-	cursor: pointer;
+	font-size: 12px;
+	left: 0px;
+	text-indent: 37em;
 }
-*/
+
 
 /*发表评论*/
 
@@ -200,9 +195,11 @@
 	height: 523px;
 	margin-left: 20px;
 }
+
 .publish2 {
 	margin-left: 40px;
 }
+
 .publish5 {
 	margin-left: 430px;
 }
@@ -225,6 +222,7 @@
 	margin: 20px 0px;
 	background-color: white;
 }
+
 .w-e-toolbar .w-e-menu i {
 	color: #009688!important;
 }
