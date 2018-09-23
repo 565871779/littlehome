@@ -13,7 +13,8 @@
 	position: relative;
 }
 .look {
-	margin-left: 50px;
+	position: absolute;
+	left: 140px;
 	color: #2d64b3;
 	cursor: pointer;
 }
@@ -195,40 +196,54 @@
 }
 
 .publish {
-	height: 530px;
-	margin-left: 20px;
+	position: relative;
+	height: 550px;
+	left: 20px;
 }
 
 .publish1,
 .publish3 {
+	position: absolute;
 	display: inline-block;
-	margin-top: 2px;
+	top: 2px;
 	width: 14px;
 	height: 14px;
 	background-image: url(../img/poster_icons_4ca8924.png);
 }
+.publish2 {
+	position: absolute;
+	left: 25px;
+}
 
 .publish3 {
+	position: absolute;
 	background-position: 0px 30px;
-	margin-left: 20px;
+	left: 105px;
 }
 
 .publish4 {
+	position: absolute;
+	left: 125px;
 	cursor: pointer;
 }
 
 .publish5 {
-	margin-left: 260px;
+	position: absolute;
+	left: 360px;
+}
+.publish6 {
+	position: absolute;
+	left: 560px;
+}
+.publish7 {
+	position: absolute;
+	left: 460px;
 }
 
 .publish6,
 .publish7 {
 	text-decoration: underline;
 	cursor: pointer;
-}
-
-.publish7 {
-	margin-left: 35px;
 }
 
 .publish-name {
@@ -262,6 +277,7 @@
 
 .publish-input {
 	position: relative;
+	top: 20px;
 }
 
 .publish-input input[type="checkbox"] {

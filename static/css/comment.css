@@ -97,6 +97,20 @@
 	width: 130px;
 	background-color: #fafbfc;
 }
+
+.person img {
+	width: 88px;
+	height: 88px;
+	margin: 20px;
+}
+.person p {
+	width: 88px;
+	padding-bottom: 50px;
+	text-align: center;
+	margin: auto;
+}
+
+
 /*
 .listtext {
 	width: 460px;
