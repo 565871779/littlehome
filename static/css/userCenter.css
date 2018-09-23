@@ -1,0 +1,256 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+#center-img {
+	width: 1399px;
+	height: 4000px;
+	background: url('/img/bg_user01.jpg') center top no-repeat;
+	position: absolute;
+	background-color: white;
+}
+
+.ziliao {
+	width: 780px;
+	height: 26px;
+	position: relative;
+	top: 295px;
+	left: 376px;
+}
+
+.ziliao .alink {
+	background: url('/img/icon_bianji.png') no-repeat;
+	background-position: 2px;
+	background-color: #fff;
+	color: #333;
+	border-color: #ccc;
+	padding: 4px 16px;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.ziliao .alink:hover {
+	border: 1px solid dodgerblue;
+}
+
+#center-heads {
+	width: 980px;
+	background-color: #fdfdfde6;
+	margin: 320px auto;
+}
+
+#center-heads .one-img {
+	width: 150px;
+	height: 150px;
+	position: relative;
+	top: -60px;
+	border: 4px solid white;
+	border-radius: 5px;
+	float: left;
+}
+
+#center-img .center-cen {
+	width: 480px;
+	height: 100px;
+	float: left;
+	margin-left: 10px;
+}
+
+#center-img .center-cen p {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+#center-img .center-cen .icon-one {
+	display: inline-block;
+	width: 15px;
+	height: 20px;
+	background: url('/img/icon_groups.png') no-repeat;
+	background-position: 0px -32px;
+}
+
+#center-img .center-cen span {
+	display: inline-block;
+	color: #797C80;
+	overflow: hidden;
+	font-size: 14px;
+	height: 22px;
+	margin-left: -5px;
+}
+
+#center-img .center-cen .span1 {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#center-img .center-rig {
+	width: 311px;
+	height: 100px;
+	float: left;
+}
+
+.one-two {
+	width: 750px;
+	height: 200px;
+	position: relative;
+	top: -50px;
+	left: -1px;
+}
+
+.one-three {
+	width: 238px;
+	height: 74px;
+	position: absolute;
+	top: 459px;
+	left: 949px;
+}
+
+.threadList_title {
+	color: #494A4C;
+	font-family: STHeiti, "Microsoft Yahei", Arial, SimSun;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 18px;
+	position: absolute;
+	top: 3px;
+	left: 23px;
+}
+.threadList_title .cut_line {
+    color: #4585E6;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    vertical-align: top;
+}
+
+#display {
+	display: none;
+}
+.one-four {
+	width: 238px;
+	height: 169px;
+	position: absolute;
+	left: 948px;
+	top: 543px;
+}
+#content-cen{
+	width: 740px;
+	height: 1000px;
+	background-color: #fbfbfb;
+	position: absolute;
+	top: 648px;
+	left: 210px;
+}
+.moban1{
+	width: 690px;
+	height: 114px;
+	border-bottom: 1px dotted #E1E3E6;
+	margin-top:50px;
+	margin-left: 30px;
+}
+.moban1 .head-img{
+	width: 45px;
+	height: 45px;
+	border: 1px solid gainsboro;
+	float: left;
+}
+.bawho{
+	font-size: 12px;
+	color: #666;
+	margin-bottom: 8px;
+}
+.bahwo-one{
+    font-size: 14px;
+    line-height: 14px;
+    color: #2962B6;
+}
+
+.n_txt {
+    line-height: 12px;
+    color: #919499;
+    font-size: 12px;
+    margin: 10px 0 10px;
+}
+.moban1 .moban-cen{
+	width: 600px;
+	height: 99px;
+	margin-left: 15px;
+	float: left;
+}
+.n_reply{
+	width: 638px;
+	height: 18px;
+    line-height: 18px;
+}
+.userinfo_split {
+    border-color: #CCC;
+    border-style: solid;
+    border-width: 0 0 0 1px;
+    display: inline-block;
+    height: 10px;
+    line-height: 10px;
+    margin: 0 10px 2px 9px;
+    vertical-align: middle;
+}
+.post_num {
+    color: #999;
+    padding-left: 16px;
+    background: url('/img/icon_groups.png') no-repeat 0 -149px;
+}
+.post_author {
+    color: #919499;
+    color: #999;
+    padding-left: 16px;
+    background: url('/img/icon_groups.png') no-repeat 0 -119px;
+}
+a {
+    text-decoration: none;
+}
+.n_post_time {
+    position: absolute;
+    font-family: Arial SimSun;
+    font-size: 12px;
+    line-height: 12px;
+    color: #919499;
+    top: 50px;
+    height: 45px;
+    right: 40px;
+}
+.slide-div {
+	width: 241px;
+	height: 3000px;
+	background-color: #fbfbfb;
+	position: absolute;
+	top: 715px;
+	right: 208px;
+}
+.myLikes {
+	width: 237px;
+	height: 169px;
+	zoom: 1;
+	border: 1px solid gainsboro;
+	margin-left: 3px;
+	margin-top: 15px;
+}
+.myFans {
+	width: 237px;
+	height: 169px;
+	zoom: 1;
+	border: 1px solid gainsboro;
+	margin-left: 3px;
+	margin-top: 15px;
+}
+.ihome_aside_title {
+    font-family: "microsoft yahei",simhei,sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    color: #333;
+    margin-left: 18px;
+    margin-top: 10px;
+}
+.ulli li{
+	float: left;
+	margin-left: 10px;
+}
