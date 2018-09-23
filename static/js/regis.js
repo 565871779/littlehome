@@ -1,10 +1,9 @@
 $(function(){
 	
 //点击登录按钮跳转到登录页面
-//	$("#href_login").click(function(){
-//		window.location.href('');
-//	
-//	});
+	$("#href_login").click(function(){
+		window.location.href='/login';
+	});
 		let form = layui.form;
 		let err1=0;
 		let err2=0;
@@ -18,6 +17,7 @@ $(function(){
 			$(This).parent().next().removeClass("red");
 			$(This).parent().next().html('字母，数字，下划线，减号，4到16位');
 			$(This).parent().next().css("font-size","12px")
+			$(".right").eq(0).css("display","none");
 		})
 		$("input[name=username]").on("blur",function(){
 			let This = this;
@@ -35,7 +35,8 @@ $(function(){
         			$(This).parent().next().html('用户名格式不对');
         			err1++
         		}else {
-        			$(This).parent().next().html('')
+        			$(This).parent().next().html('');
+        			$(".right").eq(0).css("display","inline-block");
         			err1=0
         		}
 				
@@ -44,7 +45,8 @@ $(function(){
 			let This=this;
 			$(This).parent().next().removeClass("red");
 			$(This).parent().next().html('密码位6-16位,可为数字，字母');
-			$(This).parent().next().css("font-size","12px")
+			$(This).parent().next().css("font-size","12px");
+			$(".right").eq(2).css("display","none");
 		})
 		$("input[name=password]").on("blur",function(){
 			//6-12位数字加字母组成
@@ -56,7 +58,8 @@ $(function(){
         		$(this).parent().next().html('密码格式不对');
 				err2++
 			}else {
-				$(this).parent().next().html(" ")
+				$(this).parent().next().html(" ");
+				$(".right").eq(2).css("display","inline-block ");
 				err2=0
 			}	
 		})
@@ -64,7 +67,8 @@ $(function(){
 			let This=this;
 			$(This).parent().next().removeClass("red");
 			$(This).parent().next().html('只支持大陆手机号');
-			$(This).parent().next().css("font-size","12px")
+			$(This).parent().next().css("font-size","12px");
+			$(".right").eq(1).css("display","none");
 		})
 		$("input[name=tel]").on("blur",function(){
 			
@@ -77,6 +81,7 @@ $(function(){
 				return;
 			}else {
 				$(this).parent().next().html(" ")
+				$(".right").eq(1).css("display","inline-block ");
 				err3=0;
 				
 			}
@@ -101,6 +106,7 @@ $(function(){
                 }
                 if(result.r == 'ok'){
                     alert("注册成功");
+                    window.location.href = '/index';
                     
                 }
                 if(result.r == 'user_existed'){

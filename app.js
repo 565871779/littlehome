@@ -24,7 +24,7 @@ app.set('views', './views');
 global.conn = mysql.createConnection({
     host:'localhost',
     user:'root',
-    password:'123456',
+    password:'a58893071',
     port:3306,
     database:'smllhome'
 });
@@ -50,9 +50,8 @@ const diskstorage = multer.diskStorage({
 const upload = multer({storage: diskstorage});
 // 验证码图片
 app.get('/coder', (req, res) => {
-    var captcha = svgCaptcha.create({noise:4,ignoreChars: '0o1i', size:1,background: '#cc9966',height:38, width:90});
+    var captcha = svgCaptcha.create({noise:4,ignoreChars: '0o1i', size:1,background: '#cc9966',height:35, width:80});
 	req.session.coder = captcha.text;
-	
 	res.type('svg'); // 使用ejs等模板时如果报错 res.type('html')
 	res.status(200).send(captcha.data);
     
@@ -64,7 +63,7 @@ app.post('/uploads', upload.array('images', 1000), (req ,res)=>{
     let data = [];
     for (const ad of req.files) {
         //把反斜线转成斜线，防止各种转义引起的路径错误
-        let path = hostname +  ad.path.replace(/\\/g, '/');
+        let path = hostname + "/"+ ad.path.replace(/\\/g, '/');
         data.push(path);
     }
     res.json({
@@ -86,12 +85,14 @@ app.use('/login', require('./module/login'));
 app.use('/register',require('./module/register'));
 //首页
 app.use('/index', require('./module/index'));
+app.use('/', require('./module/index'));
 //个人中心
 app.use('/userCenter', require('./module/userCenter'));
-
+//发帖
+app.use('/publish', require('./module/publish'));
 
 //静态资源托管
-//app.use('/uploads', express.static('uploads'));
+app.use('/uploads', express.static('uploads'));
 app.use(express.static('static'));
 
 app.listen(8088, () => {

@@ -1,185 +1,234 @@
-<!DOCTYPE html>
-<html>
-
-	<head>
-		<meta charset="utf-8" />
-		<title>head</title>
-		<link rel="stylesheet" type="text/css" href="../static/layui/css/layui.css" />
-		<script src="../static/layui/layui.js" type="text/javascript" charset="utf-8"></script>
-		<script src="http://lib.sinaapp.com/js/jquery/3.1.0/jquery-3.1.0.js" type="text/javascript" charset="utf-8"></script>
-		<link rel="stylesheet" type="text/css" href="../static/css/head.css" />
-		<script src="../static/js/head.js" type="text/javascript" charset="utf-8"></script>
-
-	</head>
-
-	<body>
-		<ul class="layui-nav" lay-filter="" id="layui-nav">
-			<div class="layui-nav1">
-				<img src="../static/img/24442-20180827110935292-1162717395.jpg" width="248px" height="60px" />
-				<li class="layui-nav-item layui-this">
-					<a href="">看吧</a>
-				</li>
-				<li class="layui-nav-item">
-					<a href="">图片</a>
-				</li>
-				<li class="layui-nav-item">
-					<a href="">精品</a>
-				</li>
-				<li class="layui-nav-item">
-					<a href="">视频</a>
-				</li>
-				<li class="layui-nav-item">
-					<a href="">群主</a>
-				</li>
-				<li class="layui-nav-item layui-col-md-offset2">
-					<a href="">登录</a>
-				</li>
-				<li class="layui-nav-item">
-					<a href="">注册</a>
-				</li>
-			</div>
-		</ul>
-		<div id="main1">
-			<div id="search1">
-				<form id="layui-form-pane" class="layui-form layui-form-pane">
-					<div class="layui-form-item">
-						<label class="layui-form-label">小家电影吧</label>
-						<div class="layui-input-block">
-							<input id="layui-input" type="text" name="search" placeholder="请输入关键词 " autocomplete="off" class="layui-input">
-							<button class="layui-btn" lay-filter="formDemo">搜索</button>
-						</div>
-					</div>
-				</form>
-			</div>
-			<div class="layui-row layui-row1">
-				<img src="../static/img/123.gif " width="980px" height="180px" />
-				<div class="imgdiv1" id="imgdiv1">
-					<img id="img1" src="../static/img/timg.gif" width="160px" height="160px" />
-					<div class="littlehome">
-						<a href="">小家电影吧</a>
-					</div>
-					<div class="guanzhu">
-						<button class="layui-btn">+关注</button>
-					</div>
-					<div class="guanzhu-num">
-						关注:<span></span>
-					</div>
-					<div class="card">
-						帖子:<span></span>
-					</div>
-					<div class="signin">
-						<button class="layui-btn layui-btn-lg">签到</button>
-						<div>
-							<p>9月20日</p>
-							<p>签到10天</p>
-						</div>
-					</div>
-					<div class="home-graph">
-						小家电影吧，身边的影迷发烧友聚集地！
-					</div>
-				</div>
+<% include head.html%>
+<link rel="stylesheet" type="text/css" href="/css/home.css" />
+<div class="cardlist">
+	<div class="list">
+		<p title="回复" class="layui-badge layui-bg-green"><span>2111</span></p>
+		<div class="listtext">
+			<a class="cardname">标题</a>
+			<p>杜甫的思<br />想核心是儒家的仁<br />政思想，<br />他有“<em>致君尧舜上，再使风俗淳</em>”的宏伟抱负。想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁</p>
+		</div>
+		<div class="carduser">
+			<div class="carduser-img"></div>
+			<div class="carduser-name">楼主</div>
+		</div>
+		<div class="carddel">
+			<div class="cardback-name">
+				<a href="">删除</a>
 			</div>
 		</div>
-
-		<link rel="stylesheet" type="text/css" href="../static/css/home.css" />
-		<div class="content1">
-			<div class="cardlist">
-				<div class="list">
-					<p title="回复" class="layui-badge layui-bg-green"><span>2111</span></p>
-					<div class="listtext">
-						<a class="cardname">标题</a>
-						<p>杜甫的思<br />想核心是儒家的仁<br />政思想，<br />他有“<em>致君尧舜上，再使风俗淳</em>”的宏伟抱负。想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁</p>
-					</div>
-					<div class="carduser">
-						<div class="carduser-img"></div>
-						<div class="carduser-name">楼主</div>
-					</div>
-					<div class="cardback">
-						<div class="cardback-img"></div>
-						<div class="cardback-name">最后回复人</div>
-					</div>
-					<div class="cardtime">
-						时间
-					</div>
-				</div>
-				<div class="layui-btn-container page">
-					<button class="layui-btn">首页</button>
-					<button class="layui-btn"><i class="layui-icon">&#xe603;</i></button>
-					<button class="layui-btn">1</button>
-					<button class="layui-btn">2</button>
-					<button class="layui-btn">3</button>
-					<button class="layui-btn">4</button>
-					<button class="layui-btn">5</button>
-					<button class="layui-btn"><i class="layui-icon">&#xe602;</i></button>
-					<button class="layui-btn">尾页</button>
-				</div>
-			</div>
-			<div class="aside1">
-				<div class="aside-massage">
-					<span>本吧信息</span>
-					<a class="look">查看详情>></a>
-					<div class="look1">
-						<img src="#" />
-						<div>name</div>
-					</div>
-					<div class="look2">
-						<img src="#" />
-						<div>name</div>
-					</div>
-					<div class="look3">
-						<img src="#" />
-						<div>name</div>
-					</div>
-					<p class="look4">小吧：小吧主共<span>??</span>人</p>
-					<p class="look5">会员：<span>电影人</span></p>
-					<p class="look5">目录：<span>电影话题</span></p>
-					<p class="look5">| <span>申请小吧主</span></p>
-				</div>
-				<img class="aside1-img" src="../static/img/1172404.png" />
-				<img class="aside1-img" src="../static/img/1172545.png" />
-				<img class="aside1-img" src="../static/img/1172626.png" />
-				<img class="aside1-img" src="../static/img/172708.png" />
-				<img class="aside1-img" src="../static/img/72816.png" />
-				<img class="aside1-img lastimg" src="../static/img/70502.png" />
+		<div class="carddig">
+			<div class="cardback-name">
+				<a href="">加精</a>
 			</div>
 		</div>
-
-		<div class="last">
-			<div class="publish">
-				<div class="publish-head">
-					<div class="publish1"></div>
-					<span class="publish2">发表新帖</span>
-					<div class="publish3"></div>
-					<a class="publish4">发起投票</a>
-					<span class="publish5">发贴请遵守</span>
-					<a class="publish6">贴吧协议及“七条底线” </a>
-					<a class="publish7">贴吧投诉</a>
-				</div>
-				<from class="publish-input">
-					<input title="请输入标题" type="text" name="title" required lay-verify="required" placeholder="请输入标题" class="layui-input publish-name">
-					<a class="publish-name1"></a>
-					<div class="publish-text"><span>请输入内容</span></div>
-					<input type="checkbox" name="agree"><span>发表后自动分享本贴</span>
-					<button class="layui-btn">发表</button>
-				</from>
-			</div>
-
-			<div id="footer" class="footer">
-				<span>2018 小家电影吧</span>
-				<a pv_code="0" href="/tb/eula.html" target="_blank">贴吧协议</a> <span>|</span>
-				<a pv_code="0" href="https://tieba.baidu.com/tb/cms/tieba-fe/tieba_promise.html" target="_blank">隐私政策</a> <span>|</span>
-				<a pv_code="0" href="http://tieba.baidu.com/tb/system.html" target="_blank">吧主制度</a> <span>|</span>
-				<a class="ueg_feedback-link" data-site="feedbackLink" pv_code="0" href="http://tieba.baidu.com/hermes/feedback" target="_blank">意见反馈</a> <span>|</span>
-				<a pv_code="0" href="/tb/zt/declare/" target="_blank">网络谣言警示</a>
+		<div class="cardback">
+			<div class="cardback-img"></div>
+			<div class="cardback-name">最后回复人</div>
+		</div>
+		<div class="cardtime">
+			时间
+		</div>
+	</div>
+	<%for(let c of clist){%>
+	<div class="list">
+		<p title="回复" class="layui-badge layui-bg-green"><span><%=c.tnum%></span></p>
+		<div class="listtext">
+			<a class="cardname">
+				<%=c.title%>
+			</a>
+			<p>
+				<%-c.content%>
+			</p>
+		</div>
+		<div class="carduser">
+			<div class="carduser-img"></div>
+			<div class="carduser-name">
+				<%=c.tuname%>
 			</div>
 		</div>
+		<%if(admin){%>
+		<div class="carddel">
+			<div class="cardback-name">
+				<a href="javascript:void(0)" data-tid=<%=c.tid%>>删除</a>
+			</div>
+		</div>
+		<div class="carddig">
+			<div class="cardback-name">
+				<%if(!(c.digest*1)){%>
+				<a href="javascript:void(0)" data-tid=<%=c.tid%>>加精</a>
+				<%}else{%>
+				<a href="javascript:void(0)" data-tid=<%=c.tid%>>取消加精</a>
+				<%}%>
+			</div>
+		</div>
+		<%}%>
+		<div class="cardback">
+			<div class="cardback-img"></div>
+			<div class="cardback-name">
+				<%=c.lastuser%>
+			</div>
+		</div>
+		<div class="cardtime">
+			<p>
+				<%=c.lastreplaytime.toLocaleTimeString()%>
+			</p>
+		</div>
+	</div>
+	<%}%>
+</div>
 
-		<script src="//unpkg.com/wangeditor/release/wangEditor.min.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
-			var E = window.wangEditor;
-			var editor = new E('.publish-text');
-			editor.create();
-		</script>
+<div class="aside">
+
+</div>
+
+<div class="last">
+	<div class="publish">
+		<div class="publish-head">
+			<div class="publish1"></div>
+			<span class="publish2">发表新帖</span>
+			<div class="publish3"></div>
+			<a class="publish4">发起投票</a>
+			<span class="publish5">发贴请遵守</span>
+			<a class="publish6">贴吧协议及“七条底线” </a>
+			<a class="publish7">贴吧投诉</a>
+		</div>
+		<from class="publish-input">
+			<input title="请输入标题" type="text" name="title" id="title" required lay-verify="required" placeholder="请输入标题" class="layui-input publish-name">
+			<a class="publish-name1"></a>
+			<div class="publish-text"><span>请输入内容</span></div>
+			<input type="checkbox" name="agree"><span>发表后自动分享本贴</span>
+			<button class="layui-btn release-btn" id="publish" type="button">发表</button>
+		</from>
+	</div>
+
+	<% include footer.html%>
+	<script src="//unpkg.com/wangeditor/release/wangEditor.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		let br = $("br");
+		$(".list img").css("width", 150);
+		$(".listtext img").before(br);
+		var E = window.wangEditor;
+		var editor = new E('.publish-text');
+		editor.customConfig.uploadImgServer = '/uploads';
+		editor.customConfig.uploadFileName = 'images';
+		editor.create();
+		$(".publish-text").click(function() {
+			$(".publish-text span").remove();
+		})
+		$("#publish").click(function() {
+			$(".publish-text span").remove();
+			if(!$("#title").val()) {
+				alert("标题不能为空");
+				return;
+			}
+			if(!editor.txt.html()) {
+				editor.txt.html($("#title").val());
+			}
+			data1 = {
+				title: $("#title").val(),
+				content: editor.txt.html()
+			}
+			$.ajax({
+				type: "post",
+				url: "/publish",
+				async: true,
+				dataType: "JSON",
+				data: data1,
+				success: function(data) {
+					if(data.r == 'ok') {
+						window.location.href = '/index';
+						alert("发帖成功！")
+					}
+				},
+				fail: function(err) {
+					console.log(err);
+
+				}
+			});
+
+			console.log(editor.txt.html())
+		})
+		$(".carddel a").click(function() {
+			
+			let This = this;
+			if(confirm("确认删除该贴吗?")) {
+				
+				
+				$.ajax({
+					type: "post",
+					url: "/publish/del",
+					async: true,
+					dataType: "JSON",
+					data: {tid:$(This).attr("data-tid")},
+					success: function(data) {
+						if(data.r == 'ok') {
+							window.location.href = '/index';
+							alert("删除成功！")
+						}
+					},
+					fail: function(err) {
+						console.log(err);
+
+					}
+				});
+
+			}
+
+		})
+		$(".carddig a").click(function() {
+			let This = this;
+			if($(This).html()=="加精"){
+			if(confirm("确认将该贴加精吗?")) {
+				
+				
+				$.ajax({
+					type: "post",
+					url: "/publish/dig",
+					async: true,
+					dataType: "JSON",
+					data: {tid:$(This).attr("data-tid")},
+					success: function(data) {
+						if(data.r == 'ok') {
+							window.location.href = '/index';
+							alert("加精成功！")
+						}
+					},
+					fail: function(err) {
+						console.log(err);
+
+					}
+				});
+
+			}
+			}
+			if($(This).html()=="取消加精"){
+			if(confirm("确认将该贴加精取消吗?")) {
+				
+				
+				$.ajax({
+					type: "post",
+					url: "/publish/digcancel",
+					async: true,
+					dataType: "JSON",
+					data: {tid:$(This).attr("data-tid")},
+					success: function(data) {
+						if(data.r == 'ok') {
+							window.location.href = '/index';
+							alert("取消加精成功！")
+						}
+					},
+					fail: function(err) {
+						console.log(err);
+
+					}
+				});
+
+			}
+			}
+
+		})
+		// 读取 html
+	</script>
 	</body>
 
-</html>
+	</html>

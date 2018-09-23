@@ -5,11 +5,11 @@ const router = express.Router();
     res.render('./login');});
 
 router.post("/login",function(req,res){
-	
     let d = req.body;
       //首先验证验证码
-      console.log(req.session.coder)
+      console.log(req.session.coder);
     if(d.coder.toLowerCase() != req.session.coder.toLowerCase()){
+    	
         res.json({r:'coder_err'});
         return ;
     }
@@ -35,8 +35,11 @@ router.post("/login",function(req,res){
         req.session.uid = result[0].uid;
         req.session.uname = result[0].uname;
         req.session.uhead = result[0].uhead;
+        req.session.admin = result[0].admin;
+        
         //更新状态 
+         //res.render('./home');
         res.json({r:'ok'});
-    });	
+    });
 })
 module.exports = router;

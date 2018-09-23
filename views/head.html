@@ -4,18 +4,17 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>head</title>
-		<link rel="stylesheet" type="text/css" href="../static/layui/css/layui.css" />
-		<script src="../static/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="/layui/css/layui.css" />
+		<script src="/layui/layui.js" type="text/javascript" charset="utf-8"></script>
 		<script src="http://lib.sinaapp.com/js/jquery/3.1.0/jquery-3.1.0.js" type="text/javascript" charset="utf-8"></script>
-		<link rel="stylesheet" type="text/css" href="../static/css/head.css" />
-		<script src="../static/js/head.js" type="text/javascript" charset="utf-8"></script>
-
+		<link rel="stylesheet" type="text/css" href="/css/head.css" />
+		<script src="/js/head.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 
 	<body>
 		<ul class="layui-nav" lay-filter="" id="layui-nav">
 			<div class="layui-nav1">
-				<img src="../static/img/24442-20180827110935292-1162717395.jpg" width="248px" height="60px" />
+				<img src="/img/24442-20180827110935292-1162717395.jpg" width="248px" height="60px" />
 				<li class="layui-nav-item layui-this">
 					<a href="">看吧</a>
 				</li>
@@ -31,12 +30,23 @@
 				<li class="layui-nav-item">
 					<a href="">群主</a>
 				</li>
+				<% if(!uname){%>
 				<li class="layui-nav-item layui-col-md-offset2">
-					<a href="">登录</a>
+					<a href="/login">登录</a>
 				</li>
 				<li class="layui-nav-item">
-					<a href="">注册</a>
+					<a href="/register">注册</a>
 				</li>
+				<%}%>
+				<% if(uname){%>
+					<li class="layui-nav-item layui-col-md-offset2">
+						<a href=><%=uname%></a>
+					</li>
+					<li class="layui-nav-item">
+						<a href=>退出</a>
+					</li>
+				<%}%>
+				
 			</div>
 		</ul>
 		<div id="main1">
@@ -52,9 +62,9 @@
 				</form>
 			</div>
 			<div class="layui-row layui-row1">
-				<img src="../static/img/123.gif " width="980px" height="180px" />
+				<img src="/img/123.gif " width="980px" height="180px" />
 				<div class="imgdiv1" id="imgdiv1">
-					<img id="img1" src="../static/img/timg.gif" width="160px" height="160px" />
+					<img id="img1" src="/img/timg.gif" width="160px" height="160px" />
 					<div class="littlehome">
 						<a href="">小家电影吧</a>
 					</div>
