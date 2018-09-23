@@ -1,66 +1,11 @@
-/*帖子列表模板*/
+/*侧边*/
 
 .content1 {
 	width: 980px;
 	margin: auto;
 	position: relative;
-	background-color: white;
 	border: 1px solid #bbbdbf;
-}
-.aside-massage {
-	padding: 20px 15px;
-	width: 188px;
-	position: relative;
-}
-.look {
-	margin-left: 50px;
-	color: #2d64b3;
-	cursor: pointer;
-}
-.look1 {
-	position: absolute;
-	top: 35px;
-	left: 15px;
-	cursor: pointer;
-}
-.look2 {
-	position: absolute;
-	top: 35px;
-	left: 75px;
-	cursor: pointer;
-}
-.look3 {
-	position: absolute;
-	top: 35px;
-	left: 135px;
-	cursor: pointer;
-}
-.look1 div,.look2 div,.look3 div {
-	text-align: center;
-}
-.aside-massage img {
-	margin: 10px 0px 0px 5px;
-	width: 50px;
-	height: 50px;
-}
-.look5 {
-	margin: 5px 0px 5px 7px;
-}
-.look5 span {
-	color: #2d64b3;
-	cursor: pointer;
-}
-.look4 {
-	margin: 85px 0px 0px 8px;
-}
-.aside1 {
-	width: 220px;
-	position: absolute;
-	top: 0px;
-    left: 761px;
-}
-.aside-massage,.aside1-img {
-	border-bottom: 1px solid #bbbdbf;
+	background-color: #f5f7fa;
 }
 .cardlist {
 	position: relative;
@@ -68,6 +13,77 @@
 	margin-right: 1px;
 	background-color: white;
 }
+.aside1 {
+	width: 219px;
+	position: absolute;
+	top: 0px;
+    left: 761px;
+}
+.aside-massage {
+	padding: 20px 15px;
+	width: 188px;
+	height: 120px;
+	position: relative;
+}
+
+.look1 {
+	position: absolute;
+	top: 50px;
+	left: 15px;
+	cursor: pointer;
+}
+
+.look2 div,.look3 div {
+	width: 20px;
+	height: 20px;
+	background-image: url(../img/tb_common_z_01f0eaf.png);
+}
+.look2 div {
+	position: absolute;
+	top: 55px;
+	left: 110px;
+	cursor: pointer;
+	background-position: 107px -26px;
+}
+.look3 div {
+	position: absolute;
+	top: 80px;
+	left: 112px;
+	cursor: pointer;
+	background-position: 127px -136px;
+}
+.look2 p {
+	width: 65px;
+	height: 16px;
+	position: absolute;
+	top: 60px;
+	left: 136px;
+	cursor: pointer;
+}
+.look3 p {
+	color: orange;
+	width: 65px;
+	height: 16px;
+	position: absolute;
+	top: 86px;
+	left: 136px;
+	cursor: pointer;
+}
+.look1 img {
+	width: 84px;
+	height: 84px;
+}
+.aside-massage,.aside1-img {
+	border-bottom: 1px solid gray;
+}
+.page {
+	width: 760px;
+	text-align: center;
+	padding: 20px 0px;
+	border-right: 1px solid #bbbdbf;
+}
+
+/*评论显示区*/
 
 .list {
 	width: 760px;
@@ -77,27 +93,11 @@
 	z-index: 666;
 }
 
-.list:hover {
-	background-color: #F2F4F7;
+.person {
+	width: 130px;
+	background-color: #fafbfc;
 }
-
-.page {
-	width: 760px;
-	text-align: center;
-	padding: 20px 0px;
-	border-right: 1px solid #bbbdbf;
-}
-
-.layui-badge {
-	width: 50px;
-	height: 30px;
-	line-height: 30px;
-	position: absolute;
-	top: 20px;
-	left: 20px;
-	background-color: #6f8e8b!important;
-}
-
+/*
 .listtext {
 	width: 460px;
 	padding: 20px 0px 20px 100px;
@@ -143,19 +143,7 @@
 	top: 50px;
 	left: 575px;
 }
-.carddel {
-	position: absolute;
-	top: 21px;
-	left: 640px;
-}
-.carddig {
-	position: absolute;
-	top: 21px;
-	left: 685px;
-}
-.carddig a,.carddel a {
-	font-size: 12px;
-}
+
 .cardback-img {
 	width: 20px;
 	height: 20px;
@@ -183,9 +171,9 @@
 	color: gray;
 	cursor: pointer;
 }
+*/
 
-
-/*发表*/
+/*发表评论*/
 
 .last {
 	width: 980px;
@@ -195,72 +183,40 @@
 }
 
 .publish {
-	height: 530px;
+	height: 523px;
 	margin-left: 20px;
 }
-
-.publish1,
-.publish3 {
-	display: inline-block;
-	margin-top: 2px;
-	width: 14px;
-	height: 14px;
-	background-image: url(../img/poster_icons_4ca8924.png);
+.publish2 {
+	margin-left: 40px;
 }
-
-.publish3 {
-	background-position: 0px 30px;
-	margin-left: 20px;
-}
-
-.publish4 {
-	cursor: pointer;
-}
-
 .publish5 {
-	margin-left: 260px;
+	margin-left: 430px;
 }
 
-.publish6,
-.publish7 {
+.publish6 {
 	text-decoration: underline;
 	cursor: pointer;
 }
 
-.publish7 {
-	margin-left: 35px;
-}
-
-.publish-name {
-	display: inline-block;
-	border: 1px solid #adadad;
-	margin-top: 15px;
-	width: 670px;
-	height: 30px;
-}
-
-.publish-name1 {
-	display: inline-block;
-	width: 46px;
-	height: 20px;
-	background-image: url(../img/icon_topic_n_fd30738.png);
-	position: absolute;
-	top: -2px;
-	left: 680px;
+.share {
 	cursor: pointer;
+	margin-left: 745px;
+	width: 202px;
+	height: 18px;
+	background-image: url(../img/3102442.png);
 }
 
 .publish-text {
-	width: 740px;
-	margin-top: 20px;
+	width: 700px;
+	margin: 20px 0px;
 	background-color: white;
 }
-
 .w-e-toolbar .w-e-menu i {
 	color: #009688!important;
 }
 
 .publish-input {
+	left: 40px;
 	position: relative;
 }
 

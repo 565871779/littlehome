@@ -37,7 +37,7 @@ body {
 	width: 100%;
 	height: 280px;
 	background-color: #F2F4F7;
-	border-bottom: 1px solid gray;
+	border: 1px solid #bbbdbf;
 	margin-bottom: 10px;
 }
 
@@ -87,6 +87,10 @@ body {
 	top: 4px;
 	left: 90px;
 	color: gray;
+}
+
+.guanzhu-num span,.card span,.signin span {
+	color: orange;
 }
 
 .home-graph {

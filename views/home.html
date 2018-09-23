@@ -1,16 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>home</title>
+
 <% include head.html%>
+
+
 <link rel="stylesheet" type="text/css" href="/css/home.css" />
-<div class="cardlist">
-	<div class="list">
-		<p title="回复" class="layui-badge layui-bg-green"><span>2111</span></p>
-		<div class="listtext">
-			<a class="cardname">标题</a>
-			<p>杜甫的思<br />想核心是儒家的仁<br />政思想，<br />他有“<em>致君尧舜上，再使风俗淳</em>”的宏伟抱负。想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁</p>
-		</div>
-		<div class="carduser">
-			<div class="carduser-img"></div>
-			<div class="carduser-name">楼主</div>
-		</div>
+		<div class="content1">
+			<div class="cardlist">
+				<div class="list">
+					<p title="回复" class="layui-badge layui-bg-green"><span>2111</span></p>
+					<div class="listtext">
+						<a class="cardname">标题</a>
+						<p>杜甫的思<br />想核心是儒家的仁<br />政思想，<br />他有“<em>致君尧舜上，再使风俗淳</em>”的宏伟抱负。想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁</p>
+					</div>
+					<div class="carduser">
+						<div class="carduser-img"></div>
+						<div class="carduser-name">楼主</div>
+					</div>
 		<div class="carddel">
 			<div class="cardback-name">
 				<a href="">删除</a>
@@ -76,31 +85,78 @@
 	</div>
 	<%}%>
 </div>
-
-<div class="aside">
-
-</div>
-
-<div class="last">
-	<div class="publish">
-		<div class="publish-head">
-			<div class="publish1"></div>
-			<span class="publish2">发表新帖</span>
-			<div class="publish3"></div>
-			<a class="publish4">发起投票</a>
-			<span class="publish5">发贴请遵守</span>
-			<a class="publish6">贴吧协议及“七条底线” </a>
-			<a class="publish7">贴吧投诉</a>
+				
+				<div class="layui-btn-container page">
+					<button class="layui-btn">首页</button>
+					<button class="layui-btn"><i class="layui-icon">&#xe603;</i></button>
+					<button class="layui-btn">1</button>
+					<button class="layui-btn">2</button>
+					<button class="layui-btn">3</button>
+					<button class="layui-btn">4</button>
+					<button class="layui-btn">5</button>
+					<button class="layui-btn"><i class="layui-icon">&#xe602;</i></button>
+					<button class="layui-btn">尾页</button>
+				</div>
+			</div>
+			<div class="aside1">
+				<div class="aside-massage">
+					<span>本吧信息</span>
+					<a class="look">查看详情>></a>
+					<div class="look1">
+						<img src="#" />
+						<div>name</div>
+					</div>
+					<div class="look2">
+						<img src="#" />
+						<div>name</div>
+					</div>
+					<div class="look3">
+						<img src="#" />
+						<div>name</div>
+					</div>
+					<p class="look4">小吧：小吧主共<span>??</span>人</p>
+					<p class="look5">会员：<span>电影人</span></p>
+					<p class="look5">目录：<span>电影话题</span></p>
+					<p class="look5">| <span>申请小吧主</span></p>
+				</div>
+				<img class="aside1-img" src="../static/img/1172404.png" />
+				<img class="aside1-img" src="../static/img/1172545.png" />
+				<img class="aside1-img" src="../static/img/1172626.png" />
+				<img class="aside1-img" src="../static/img/172708.png" />
+				<img class="aside1-img" src="../static/img/72816.png" />
+				<img class="aside1-img lastimg" src="../static/img/70502.png" />
+			</div>
 		</div>
-		<from class="publish-input">
+
+		<div class="last">
+			<div class="publish">
+				<div class="publish-head">
+					<div class="publish1"></div>
+					<span class="publish2">发表新帖</span>
+					<div class="publish3"></div>
+					<a class="publish4">发起投票</a>
+					<span class="publish5">发贴请遵守</span>
+					<a class="publish6">贴吧协议及“七条底线” </a>
+					<a class="publish7">贴吧投诉</a>
+				</div>
+				<from class="publish-input">
 			<input title="请输入标题" type="text" name="title" id="title" required lay-verify="required" placeholder="请输入标题" class="layui-input publish-name">
 			<a class="publish-name1"></a>
 			<div class="publish-text"><span>请输入内容</span></div>
 			<input type="checkbox" name="agree"><span>发表后自动分享本贴</span>
 			<button class="layui-btn release-btn" id="publish" type="button">发表</button>
-		</from>
-	</div>
+				</from>
+			</div>
 
+			<div id="footer" class="footer">
+				<span>2018 小家电影吧</span>
+				<a pv_code="0" href="/tb/eula.html" target="_blank">贴吧协议</a> <span>|</span>
+				<a pv_code="0" href="https://tieba.baidu.com/tb/cms/tieba-fe/tieba_promise.html" target="_blank">隐私政策</a> <span>|</span>
+				<a pv_code="0" href="http://tieba.baidu.com/tb/system.html" target="_blank">吧主制度</a> <span>|</span>
+				<a class="ueg_feedback-link" data-site="feedbackLink" pv_code="0" href="http://tieba.baidu.com/hermes/feedback" target="_blank">意见反馈</a> <span>|</span>
+				<a pv_code="0" href="/tb/zt/declare/" target="_blank">网络谣言警示</a>
+			</div>
+		</div>
 	<% include footer.html%>
 	<script src="//unpkg.com/wangeditor/release/wangEditor.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
@@ -228,7 +284,7 @@
 
 		})
 		// 读取 html
-	</script>
+		</script>
 	</body>
 
-	</html>
+</html>
