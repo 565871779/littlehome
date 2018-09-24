@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>个人资料修改</title>
+		<link rel="stylesheet" type="text/css" href="../static/css/personal.css" />
+		<link rel="stylesheet" type="text/css" href="../static/layui/css/layui.css" />
+		<script type="text/javascript" src="../static/layui/layui.js"></script>
+		
+	</head>
+
+	<body>
+		<header>
+			<div class="header">
+				<div class="header-logo"></div>
+				<div class="header-r">
+					<div class="header-rt">
+
+					</div>
+					<div class="header-rz">
+						<a href=""><span id="">个人中心</span></a><span>&nbsp;&nbsp;|</span>
+						<a href=""><span id="">百度首页</span></a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<article>
+			<div class="art-head">
+				<h1>个人设置</h1>
+			</div>
+			<div class="art-left">
+				<div class="menu-title1">
+					<h3>个人资料</h3>
+				</div>
+				<a href="#"><div class="menu-title-j t">基本资料</div></a>
+				<a href="#"><div class="menu-title-g t">更换头像</div></a>
+			</div>
+			<div class="art-right">
+				<div class="art-right1">
+					<div class="art-right-header">
+						<p>基本资料</p>
+					</div>
+					<div class="art-right-from">
+						<form class="layui-form" action="">
+							<div class="layui-form-item">
+								<label class="layui-form-label">昵称</label>
+								<div class="layui-input-inline">
+									<input type="text" name="text" required lay-verify="required" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+								</div>
+								<div class="layui-form-mid layui-word-aux"></div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">密码</label>
+								<div class="layui-input-inline">
+									<input type="password" name="password" required lay-verify="required" placeholder="请输入6~12位密码" autocomplete="off" class="layui-input">
+								</div>
+								<div class="layui-form-mid layui-word-aux"></div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">确认密码</label>
+								<div class="layui-input-inline">
+									<input type="password" name="password" required lay-verify="required" placeholder="确认密码" autocomplete="off" class="layui-input">
+								</div>
+								<div class="layui-form-mid layui-word-aux"></div>
+							</div>
+							<div class="layui-form-item">
+								<div class="layui-input-block">
+									<button class="layui-btn getbtn" type="button" lay-filter="formDemo">立即提交</button>
+									<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				
+				
+			<div id="art-r2">
+				
+			    <div class="art-right2">			
+					<div class="art-right-header">
+						<p>更换头像</p>
+					</div>
+					
+					<div class="art-right2-photo">
+						<div class="layui-tab">
+							<ul class="layui-tab-title">
+								<li class="layui-this">自定义头像</li>
+								<li>热门头像推荐</li>
+							</ul>
+							<div class="layui-tab-content">
+								<div class="layui-tab-item layui-show">
+									<div class="photo-form1">
+									<form name="form1">
+	                                         <input type="file" name="picpath" id="picpath" style="display:none;" onChange="document.form1.path.value=this.value">  
+	                                         <input type="button" value="选择图片" onclick="document.form1.picpath.click()">
+	                                         <span>支持jpg、jpeg、gif、png、bmp格式的图片</span><br /><br />
+	                                         <button type="button">保存更改</button>
+                                    </form> 		
+									</div>
+								</div>
+								<div class="layui-tab-item">内容2</div>
+							</div>
+						</div>
+						<script>
+							layui.use('element', function() {
+								var element = layui.element;
+							});
+						</script>
+					</div>
+						<div class="photo-r">
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;头像预览</span>
+							<div class="big_photo">
+								<img src="../static/img/1.jpg"/>
+							</div>
+							<p>大头像100*100</p>
+							<div class="mall_photo"><img src="../static/img/1.jpg"/>
+							</div>
+							<p>小头像60*60</p>
+						</div>
+				
+			    </div>
+			</div>
+			</div>	
+		</article>
+<script src="../static/js/personal.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

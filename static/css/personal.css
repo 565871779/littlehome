@@ -1,0 +1,184 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ header {
+ 	width: 100%;
+ 	height: 38px;
+ 	border-bottom: 2px solid gainsboro;
+ }
+ .header {
+ 	width: 980px;
+ 	height: 38px;
+ 	margin: auto;
+ 	position: relative;
+ }
+ .header-logo{
+ 	width: 91px;
+ 	height: 30px;
+ 	position: relative;
+ 	background-image: url(../img/24442-20180827110935292-1162717395.jpg);
+ 	background-size: 91px 30px;
+ 	background-repeat: no-repeat;
+ 	top: 4px;
+ }
+.header-r {
+	display: inline-block;
+	width: 160px;
+	height: 38px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+
+}
+//头像
+.photo {
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+}
+.header-rt {
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	background-image: url(../img/1.jpg);
+	background-size: 38px 38px;
+ 	background-repeat: no-repeat;
+}
+.header-rz {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+    line-height: 38px;
+    color: black;
+    font-size: 13px;
+}
+a {
+	text-decoration: none;
+}
+article {
+	position: relative;
+	width: 976px;
+	height: 546px;
+	border: 2px solid gainsboro;
+	margin: auto;
+	margin-top: 15px;
+}
+.art-head {
+	background-color: ghostwhite;
+	width: 978px;
+	height: 46px;
+	border-bottom: 1px solid gainsboro;
+}
+.art-head h1 {
+	color: grey;
+	line-height: 46px;
+	margin-left: 10px;
+}
+.art-left {	
+	width: 200px;
+	height: 500px;
+	background-color: ghostwhite;
+	border-right: 1px solid gainsboro;
+}
+.menu-title1
+{
+	width: 198px;
+	height: 41px;
+	border-bottom: 1px solid gainsboro;
+	text-align: center;
+	line-height: 41px;
+	border-left: 3px solid blue;
+	
+}
+.t {
+	width: 200px;
+	height: 41px;
+	border-bottom: 1px solid gainsboro;
+	text-align: center;
+	line-height: 41px;
+	font-size: 14px;
+}
+.art-right {
+	width: 778px;
+	height: 500px;
+	position: relative;
+	right: -200px;
+	top: -500px;
+}
+/*个人资料*/
+.art-right1 {    
+	width: 738px;
+	height: 310px;
+	position: absolute;
+	
+	left: 20px;
+}
+.art-right-header {
+	margin: auto;
+	line-height: 45px;
+	text-indent: 2em;
+	width: 738px;
+	height: 45px;
+	border-bottom: 1px solid gainsboro;
+	position: relative;
+}
+.art-right-from {
+	position: absolute;
+	width: 738px;
+	margin-top: 10px;
+    font-size: 14px;
+}
+.getbtn+.layui-btn {
+	background-color: #75abda;
+}
+
+/*换头像*/
+.art-right2　{
+	width: 738px;
+	height: 310px;
+	position: absolute;
+	top: 10px;
+	left: 10px;   
+}
+.art-right2-photo {	
+	width: 440px;
+	margin-left: 20px;
+	margin-top: 10px;
+    font-size: 14px;  
+}
+.photo-r {
+	width: 217px;
+	height: 390px;
+	position: absolute;
+	right: 60px;
+    border-left: 1px solid gainsboro;
+	top: 110px;
+}
+.big_photo
+,.big_photo img {
+	width: 100px;
+	height: 100px;
+}
+
+.mall_photo
+,.mall_photo img {
+	width: 60px;
+	height: 60px;
+	background-color: pink;
+}
+.big_photo
+,.mall_photo {
+	margin: 30px;
+	font-size: 12px;
+	color: gray;
+}
+.photo-r p{
+	margin-left: 30px;
+	font-size: 12px;
+	color: gray;
+	margin-top: -30px;
+}
+#art-r2 {
+	display: none;
+}
