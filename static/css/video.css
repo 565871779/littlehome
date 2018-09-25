@@ -1,0 +1,101 @@
+			.vido {
+				width: 980px;
+				border: 1px solid  #bbbdbf;
+				position: relative;
+				background-color: white;
+			}
+			
+			.vido-n {
+				width: 740px;
+				border-bottom: 1px solid gainsboro;
+			}
+			.vido-f {
+				width: 740px;
+			}
+			.vido-n-head {
+				width: 740px;
+				height: 44.3px;
+			}
+			
+			#headbar {
+				width: 740px;
+				height: 44.3px;
+				line-height: 44.3px;
+				font-size: 13px;
+			}
+			
+			#more_video {
+				margin-left: 530px;
+			}
+			#more_video1 {
+				margin-left: 642px;
+			}
+			#new_vbtn {
+				color: black;
+			}
+			
+			.vido-n-vido li {
+				list-style-type: none;
+				display: inline-block;
+				width: 166px;
+				height: 213px;
+				position: relative;
+				margin: 7px;
+			}
+			
+			.vido-n-vido img {
+				width: 166px;
+				height: 130px;
+			}
+			
+			.vido-n-vido span {
+				color: darkgray;
+				font-size: 12px;
+				margin-left: 4px;
+			}
+			
+			.vido-n-vido a {
+				text-decoration: none;
+				font-size: 12px;
+				color: blue;
+			}
+			
+			.vido-n-vido button {
+				width: 50px;
+				height: 50px;
+				opacity: 0.4;
+				border: none;
+				border-radius: 50%;
+				position: absolute;
+				top: 42px;
+				left: 56px;
+				background-color: gainsboro;
+			}
+			
+			.vido-n-vido i {
+				opacity: 0.4;
+			}
+			
+			.layui-btn1 .layui-icon {
+				margin-left: -6px;
+				font-size: 33px!important;
+			}
+			
+
+
+.video-aside {
+	width: 980px;
+	margin: auto;
+	position: relative;
+	margin-bottom: 50px;
+}
+.aside1 {
+	border-left: 1px solid  #bbbdbf;
+}
+.lastimg {
+	padding-bottom: 14px;
+	border-bottom: none!important;
+}
+#footer {
+	margin-bottom: 50px!important;
+}

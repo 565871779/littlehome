@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8" />
-		<title>home</title>
+		<title>主页</title>
 
 		<% include head.html%>
-
+		<% include fixed.html%>
 		<link rel="stylesheet" type="text/css" href="/css/home.css" />
 		<div class="content1">
 			<div class="cardlist">
 				<div class="list">
 					<p title="回复" class="layui-badge layui-bg-green"><span>2111</span></p>
 					<div class="listtext">
-						<a class="cardname">标题</a>
-						<p>杜甫的思<br />想核心是儒家的仁<br />政思想，<br />他有“<em>致君尧舜上，再使风俗淳</em>”的宏伟抱负。想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁</p>
+						<a class="cardname"><p class="cardname1">标题:</p></a>
+						<p class="cardtext">杜甫的思<br />想核心是儒家的仁<br />政思想，<br />他有“<em>致君尧舜上，再使风俗淳</em>”的宏伟抱负。想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁</p>
 					</div>
 					<div class="carduser">
 						<div class="carduser-img"></div>
@@ -41,10 +42,11 @@
 				<div class="list">
 					<p title="回复" class="layui-badge layui-bg-green"><span><%=c.tnum%></span></p>
 					<div class="listtext">
-						<a href=<%= "/comment?tid="+c.tid%> class="cardname">
+						<p class="cardname"><a href=<%= "/comment?tid="+c.tid%> class="cardname">
 							<%=c.title%>
-						</a>
-						<p>
+						</a></p>
+						<p class="cardtext">
+						<p class="cardtext">
 							<%-c.content%>
 						</p>
 					</div>
@@ -84,7 +86,8 @@
 				</div>
 				<%}%>
 			</div>
-
+			
+			<!--页数显示-->
 			<div class="layui-btn-container page">
 				<button class="layui-btn">首页</button>
 				<button class="layui-btn"><i class="layui-icon">&#xe603;</i></button>
@@ -96,36 +99,12 @@
 				<button class="layui-btn"><i class="layui-icon">&#xe602;</i></button>
 				<button class="layui-btn">尾页</button>
 			</div>
-			<div class="aside1">
-				<div class="aside-massage">
-					<span>本吧信息</span>
-					<a class="look">查看详情>></a>
-					<div class="look1">
-						<img src="/img/timg.gif" />
-						<div>name</div>
-					</div>
-					<div class="look2">
-						<img src="/img/timg.gif" />
-						<div>name</div>
-					</div>
-					<div class="look3">
-						<img src="/img/timg.gif" />
-						<div>name</div>
-					</div>
-					<p class="look4">小吧：小吧主共<span>??</span>人</p>
-					<p class="look5">会员：<span>电影人</span></p>
-					<p class="look5">目录：<span>电影话题</span></p>
-					<p class="look5">| <span>申请小吧主</span></p>
-				</div>
-				<img class="aside1-img" src="/img/1172404.png" />
-				<img class="aside1-img" src="/img/1172545.png" />
-				<img class="aside1-img" src="/img/1172626.png" />
-				<img class="aside1-img" src="/img/172708.png" />
-				<img class="aside1-img" src="/img/72816.png" />
-				<img class="aside1-img lastimg" src="/img/70502.png" />
-			</div>
+			
+			<!--侧边栏信息-->
+			<% include aside.html%>
 		</div>
 
+		<!--发表帖子及footer-->
 		<div class="last">
 			<div class="publish">
 				<div class="publish-head">
@@ -148,6 +127,16 @@
 
 			<% include footer.html%>
 		</div>
+		<script type="text/javascript">
+				$(function(){
+					console.log(typeof $("#index").attr("data-dig"))
+				if ( $("#index").attr("data-dig")=="undefined") {
+				} else{					
+					$("#digest").addClass("layui-this");
+					$("#index").removeClass("layui-this");
+				}	
+				})
+				</script>
 		<script src="//unpkg.com/wangeditor/release/wangEditor.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			//let br = $("br");

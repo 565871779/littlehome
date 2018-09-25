@@ -13,6 +13,7 @@ li {
 }
 
 #img-h {
+	background-color: white;
 	width: 978px;
 	height: 40px;
 	border: 1px solid gainsboro;
@@ -20,6 +21,8 @@ li {
 }
 
 #img-f {
+	background-color: white;
+	margin-bottom: 50px;
 	width: 100%;
 	position: relative;
 	top: 5px;
@@ -103,198 +106,9 @@ li {
 }
 
 
-
-
-
-
-/*//固定导航栏样式*/
-.fixed-b {
-	width: 300px;
-	height: 300px;
-	position: fixed;
-	right: 30px;
-	top: 50px;
-}
-#fixed {
-	width: 50px;
-	position: absolute;
-	right: 0px;
-}
-#fixed li {
-	margin: 2.5px;
-	width: 45px;
-	height: 45px;
-	background-repeat: no-repeat;
-	background-image: url('../img/aside_float_bar_z_91b87a8.png');
-}
-.fx1-k {
-	width: 100px;
-	height: 100px;
-	position: absolute;
-	top: 2px;
-	right: 50px;
-	background-size: 100px 100px;
-	background-image: url(../img/timg.gif);
-	display: none;
-}
-.fx1 {
-	background-position: 0px -222px;	
-}
-.fx2 {
-	background-position: -220px -112px;	
-}
-.fx3 {
-	background-position: -220px 0px;		
-}
-.fx4-k {
-	width: 220px;
-	height: 44px;
-	position: absolute;
-	top: 166px;
-	right: 48px;
-	display: none;
-	background-color: whitesmoke;
-}
-.fx4-kt {
-	height: 44px;
-	width: 220px;
-	position: absolute;
-	top: 120px;
-	right: 48px;
-
-
-}
-.fx4-kt li {
-	display: inline-block;
-	width: 48px;
-	height: 25px;
-	margin: 2px;
-	margin-top: 3px;
-	background-image: url(../img/tbshare_share_z_5c2ce14.png);
-	background-size: 115px 25px;
-	background-repeat: no-repeat;
-	display: none;
-	font-size: 12px;
-	line-height: 20px;
-	position: absolute;
-}
-.fx4-kt1 {	  
-	left: -6px;
-	top: 22px ;	
-}
-.fx4-kt2 {	
-	background-image: url(../img/timg.gif) !important;	
-    background-size: 100px 100px !important;
-    width: 100px !important;
-    height: 100px !important;
-	left: 10px;
-	top: -60px ;
+#footer {
+	padding-bottom: 50px!important;
 }
 
-.fx4-kt3 {	
-	left: 84px;
-	top: 22px ;
-	font-size: 12px;
-}
-.fx4-kt4 {	
-	left: 126px;
-	top: 22px ;
-	font-size: 12px;
-}
-.fx4-kt5 {	
-	left: 170px;
-	top: 22px ;
-	font-size: 12px;
-}
 
-.fx4-k li {
-	display: inline-block;
-	width: 35px;
-	height: 35px;
-	margin: 2px;
-	margin-top: 3px;
-	background-image: url("../img/tbshare_popup_bd95723.png");
-	background-repeat: no-repeat;
-}
-.fx4-k1 {
-	background-position: 1px 2px;
-}
-.fx4-k2 {
-	background-position: -42px 2px;
-}
-.fx4-k3 {
-	background-position: -82px 2px;
-}
-.fx4-k4 {
-	background-position: -125px 2px;
-}
-.fx4-k5 {
-	background-position: -166px 2px;
-}
-.fx4-k1:hover {
-	background-position: 1px -32px;
-}
-.fx4-k2:hover {
-	background-position: -42px -32px;
-}
-.fx4-k3:hover {
-	background-position: -82px -32px;
-}
-.fx4-k4:hover {
-	background-position: -125px -32px;
-}
-.fx4-k5:hover {
-	background-position: -166px -32px;
-}
-.fx4 {
-	background-position: -110px -165px;
-}
-.fx5 {
-	background-position: 0px -165px;	
-}
-.fx6 {
-	background-position: -110px -110px;	
-}
-.fx7 {
-	background-position: -164px -60px;	
-}
-.fixed2 {
-	position: relative;
-	top: 20px;
-}
-.fx1:hover{
-	
-	background-position: -56px -222px;
-}
-.fx2:hover{
-	background-position: -220px -165px;
-}
-.fx3:hover{
-	background-position: -220px -60px;
-}
-.fx4:hover{
-	background-position: -164px -165px;
-}
-.fx5:hover{
-	background-position: -56px -165px;
-}
-.fx6:hover{
-	background-position: -164px -0px;
-}
-.fx7:hover{
-	background-position: 0px 0px;
-}
-.fp {
-	width: 80px;
-	height: 50px;
-	background-image: url(../img/firework_entry_1ca4114.png);
-	background-repeat: no-repeat;
-	background-size: 100px 100px;
-	background-position: -18px 0px;
-	position: absolute;
-	right: 0px;
-	bottom: -100px;  
-}
-.fp:hover {
-	background-position: -18px -51px;
-}
+

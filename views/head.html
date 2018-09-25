@@ -13,29 +13,20 @@
 			<div class="layui-nav1" >
 				<img src="/img/24442-20180827110935292-1162717395.jpg" width="248px" height="60px" />
 				<li class="layui-nav-item layui-this" data-dig = "<%=typeof dig%>" id="index">
-					<a href="/index">看吧</a>
+					<a class="kanba" href="/index">看吧</a>
 				</li>
 				<li class="layui-nav-item">
-					<a href="">图片</a>
+					<a class="tupian" href="/index/img1">图片</a>
 				</li>
 				<li class="layui-nav-item " id="digest">
-					<a href="/index/digest">精品</a>
+					<a class="jingping" href="/index/digest">精品</a>
 				</li>
-				<script type="text/javascript">
-				$(function(){
-					console.log(typeof $("#index").attr("data-dig"))
-				if ( $("#index").attr("data-dig")=="undefined") {
-				} else{					
-					$("#digest").addClass("layui-this");
-					$("#index").removeClass("layui-this");
-				}	
-				})
-				</script>
+				
 				<li class="layui-nav-item">
-					<a href="">视频</a>
+					<a class="shiping" href="/index/video">视频</a>
 				</li>
 				<li class="layui-nav-item">
-					<a href="">群主</a>
+					<a class="qunzhu" href="/index">群组</a>
 				</li>
 				<% if(!uname){%>
 				<li class="layui-nav-item layui-col-md-offset2">
@@ -59,7 +50,7 @@
 			<div id="search1">
 				<form id="layui-form-pane" class="layui-form layui-form-pane">
 					<div class="layui-form-item">
-						<label class="layui-form-label">小家电影吧</label>
+						<label class="layui-form-label">小家影吧</label>
 						<div class="layui-input-block">
 							<input id="layui-input" type="text" name="search" placeholder="请输入关键词 " autocomplete="off" class="layui-input">
 							<button class="layui-btn search-btn" type="button" tylay-filter="formDemo">搜索</button>
@@ -72,7 +63,7 @@
 				<div class="imgdiv1" id="imgdiv1">
 					<img id="img1" src="/img/timg.gif" width="160px" height="160px" />
 					<div class="littlehome">
-						<a href="">小家电影吧</a>
+						<a href="">小家影吧</a>
 					</div>
 					<div class="guanzhu">
 						<button class="layui-btn">+关注</button>
