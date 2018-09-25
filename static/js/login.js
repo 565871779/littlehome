@@ -3,7 +3,7 @@ $(function() {
         $(this).attr('src', '/coder?' + new Date());
     });
     
-	$("input[name=submit]").click(function() {
+	$(".denglu").click(function() {
 		$.ajax({
 			type: "post",
 			url: "/login/login",

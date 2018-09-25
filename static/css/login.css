@@ -3,10 +3,29 @@
 				padding: 0;
 			}
 			
+			body {
+				background: url("/img/UNUF.jpg");
+				background-size: 100%;
+			}
+			
+			@font-face {
+				font-family: myFirstFont;
+				src: url("/fontfamily/呆萌娃娃体.ttf");
+			}
+			
+			.little {
+				position: absolute;
+				top: 10px;
+				left: 240px;
+				font-family: myFirstFont;
+				font-size: 65px;
+				color: #009688;
+			}
+			
 			.wrap {
 				width: 100%;
 				height: 520px;
-				background: url("/img/dlbg.jpg") center;
+				margin: auto;
 				/*背景图片*/
 			}
 			
@@ -30,6 +49,7 @@
 				background: #fff;
 				margin: auto;
 				margin-top: 100px;
+				background-color: rgba(80, 90, 80, 0.6);
 			}
 			
 			.login-info {
@@ -63,8 +83,26 @@
 			}
 			
 			input[name="submit"] {
-				background: url("/img/but.jpg") center;
+				background-color: #009688;
+				background-size: 300px 38px;
 				border: 0;
+				cursor: pointer;
+			}
+			
+			.register {
+				color: green!important;
+				font-weight: bold;
+			}
+			
+			.denglu {
+				position: relative;
+			}
+			
+			.denglu1 {
+				position: absolute;
+				cursor: pointer;
+				top: 10px;
+				left: 287px;
 			}
 			
 			.content {
