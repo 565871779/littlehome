@@ -182,3 +182,9 @@ article {
 #art-r2 {
 	display: none;
 }
+.layui-form-item .red {
+	color: red !important;
+}
+.layui-form-item {
+	position: relative;
+}

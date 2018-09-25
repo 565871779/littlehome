@@ -4,12 +4,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>个人资料修改</title>
-		<link rel="stylesheet" type="text/css" href="../static/css/personal.css" />
-		<link rel="stylesheet" type="text/css" href="../static/layui/css/layui.css" />
-		<script type="text/javascript" src="../static/layui/layui.js"></script>
-		
+		<link rel="stylesheet" type="text/css" href=" /css/personal.css" />
+		<link rel="stylesheet" href="/layui/css/layui.css">
+		<script type="text/javascript" src=" /layui/layui.js"></script>	
 	</head>
-
 	<body>
 		<header>
 			<div class="header">
@@ -33,7 +31,7 @@
 				<div class="menu-title1">
 					<h3>个人资料</h3>
 				</div>
-				<a href="#"><div class="menu-title-j t">基本资料</div></a>
+				<a href="#"><div class="menu-title-j t" style="background-color: white;">基本资料</div></a>
 				<a href="#"><div class="menu-title-g t">更换头像</div></a>
 			</div>
 			<div class="art-right">
@@ -42,28 +40,32 @@
 						<p>基本资料</p>
 					</div>
 					<div class="art-right-from">
-						<form class="layui-form" action="">
-							<div class="layui-form-item">
-								<label class="layui-form-label">昵称</label>
-								<div class="layui-input-inline">
-									<input type="text" name="text" required lay-verify="required" placeholder="请输入昵称" autocomplete="off" class="layui-input">
-								</div>
-								<div class="layui-form-mid layui-word-aux"></div>
-							</div>
+					<form class="layui-form" id="loginnoe" action="">
+						<div class="layui-form-item">
+						    <label class="layui-form-label">性别</label>
+							    <div class="layui-input-block">
+							      <input type="radio" name="sex" value="男" title="男">
+							      <input type="radio" name="sex" value="女" title="女" >
+							    </div>
+						  </div>					
 							<div class="layui-form-item">
 								<label class="layui-form-label">密码</label>
 								<div class="layui-input-inline">
 									<input type="password" name="password" required lay-verify="required" placeholder="请输入6~12位密码" autocomplete="off" class="layui-input">
 								</div>
-								<div class="layui-form-mid layui-word-aux"></div>
+								<div class="layui-form-mid layui-word-aux "></div>
+								<span class="right" style="position: absolute; top: 10px; left: 352px; float: right; width: 20px; height: 16px; background-repeat: no-repeat;background-position: -78px 0; background-image: url(/img/reg_icons.png);display: none;"></span>
 							</div>
+							
 							<div class="layui-form-item">
 								<label class="layui-form-label">确认密码</label>
 								<div class="layui-input-inline">
-									<input type="password" name="password" required lay-verify="required" placeholder="确认密码" autocomplete="off" class="layui-input">
+									<input type="password" name="password1" required lay-verify="required" placeholder="确认密码" autocomplete="off" class="layui-input">
 								</div>
 								<div class="layui-form-mid layui-word-aux"></div>
+								<span class="right" style="position: absolute; top: 10px; left: 352px; float: right; width: 20px; height: 16px; background-repeat: no-repeat;background-position: -78px 0; background-image: url(/img/reg_icons.png);display: none;"></span>
 							</div>
+							
 							<div class="layui-form-item">
 								<div class="layui-input-block">
 									<button class="layui-btn getbtn" type="button" lay-filter="formDemo">立即提交</button>
@@ -93,9 +95,9 @@
 									<div class="photo-form1">
 									<form name="form1">
 	                                         <input type="file" name="picpath" id="picpath" style="display:none;" onChange="document.form1.path.value=this.value">  
-	                                         <input type="button" value="选择图片" onclick="document.form1.picpath.click()">
-	                                         <span>支持jpg、jpeg、gif、png、bmp格式的图片</span><br /><br />
-	                                         <button type="button">保存更改</button>
+	                                         <input type="file" id="touxiang" value="选择图片">
+	                                         <p>支持jpg、jpeg、gif、png、bmp格式的图片</p><br /><br />
+	                                         <button type="button" id="submitu">保存更改</button>
                                     </form> 		
 									</div>
 								</div>
@@ -111,10 +113,11 @@
 						<div class="photo-r">
 							<span>&nbsp;&nbsp;&nbsp;&nbsp;头像预览</span>
 							<div class="big_photo">
-								<img src="../static/img/1.jpg"/>
+								<img src=" /img/1.jpg"/>
 							</div>
 							<p>大头像100*100</p>
-							<div class="mall_photo"><img src="../static/img/1.jpg"/>
+							<div class="mall_photo">
+								<img src=" /img/1.jpg"/>
 							</div>
 							<p>小头像60*60</p>
 						</div>
@@ -123,7 +126,9 @@
 			</div>
 			</div>	
 		</article>
-<script src="../static/js/personal.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js"></script>
+<script src=" /js/personal.js" type="text/javascript" charset="utf-8"></script>
+<script src="/layui/layui.all.js"></script>
 	</body>
 
 </html>

@@ -1,19 +1,21 @@
  <% include head.html%>	
+ <link rel="stylesheet" href="/css/userCenter.css" />
+ <script src="/js/userCenter.js" type="text/javascript" charset="utf-8"></script>
 		<div id="center-img">
 			<div class="ziliao">
-					<a href="#" class="alink">编辑资料</a>
+					<a href="/edit" class="alink">编辑资料</a>
 			</div>
 			<div id="center-heads">
 				<div class="head-one">
-					<img class="one-img" src="/img/userimg.jpg" alt="用户头像" />
+					<img class="one-img" src=<%=uhead%> alt="用户头像" />
 				</div>
 				<div class="center-cen">
-					<p>该用户已经超神了</p>
-					<span class="icon-one"></span>
-					<span class="uname">用户名：该用户已经超神了</span><span class="span1">|</span>
-					<span class="bage">吧龄：7.1年</span>
+					<p><%=user[0].uname%></p>
+					<span class="icon-one" <%if(user[0].usex=="女"){%>style="background-position-y: -64px"<%}%>></span>
+					<span class="uname">用户名：<%=user[0].uname%></span><span class="span1">|</span>
+					<span class="bage" >吧龄：<%=age%></span>
 					<span class="span1">|</span>
-					<span class="tienum">发帖：5200</span>
+					<span class="tienum">发帖：<%=count%></span>
 				</div>
 				<div class="center-rig">
 					<img src="/img/onejp.png" />
@@ -34,7 +36,7 @@
 					热门动态
 				</h1>
 				<div class="moban1">
-					<div class="n_post_time">18:21</div>
+					
 					<div class="head-img">
 						<img src="/img/head-img.jpg" alt="" style="width: 43px ;height: 43px;"/> 
 					</div>
@@ -42,13 +44,37 @@
 							<p class="bawho">小家电影吧</p>
 							<p><a href="#" class="bahwo-one">听说现在流行送号，那我也送一个</a></p>
 							<p class="n_txt">听说现在流行送号，那我也送一个</p>
+						</div>
 							<div class="n_reply">
-							<a href="#" title="主题作者" class="post_author">泣月梦天</a>
-							<span class="userinfo_split"></span>
-							<span class="post_num">18</span>
+								<div class="author">
+									<a href="#" title="主题作者" class="post_author">泣月梦天</a>
+									<span class="userinfo_split"></span>
+									<span class="post_num">18</span>
+								</div>
+								<div class="n_post_time">18:21</div>
+							</div>
+				</div>
+				<%for(let d of hotties){%>
+				<div class="moban1">
+					
+					<div class="head-img">
+						<img src="/img/head-img.jpg" alt="" style="width: 43px ;height: 43px;"/> 
+					</div>
+						<div class="moban-cen">
+							<p class="bawho">小家电影吧</p>
+							<p><a href="#" class="bahwo-one"><%=d.title%></a></p>
+							<p class="n_txt"><%-d.content%></p>
 						</div>
-						</div>
+							<div class="n_reply">
+							<div class="author">	
+								<a href="#" title="主题作者" class="post_author"><%=d.uname%></a>
+								<span class="userinfo_split"></span>
+								<span class="post_num"><%=d.tnum%></span>
+							</div>
+							<div class="n_post_time"><%=d.lastreplaytime.toLocaleString()%></div>
+							</div>
 				</div> 
+				<%}%>
 			</div>
 			<div class="slide-div">
 					<div class="myLikes">
@@ -78,10 +104,13 @@
 						</ul>
 					</div>
 					</div>
-				</div>
-		</div>
+			</div>
+			
 		<script type="text/javascript">
 			$('title').html('用户个人中心');
 		</script>
 	</body>
 </html>
+
+					
+				

@@ -1,0 +1,45 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.grcard {
+	width: 280px;
+	height: 155px;
+	position: absolute;
+	left: 100px;
+	top: 100px;
+}
+.gr_card_head {
+	width: 280px;
+	height: 75px;
+	background-image: url(../img/1.jpg);
+  background-size: 280px 75px;
+}
+.gr_card_head_button {
+	position: absolute;
+	right: 8px;
+	top: 48px;
+}
+.gr_card_head button {
+	border: none;
+	color: white;
+	text-align: center;
+	
+	
+}
+.gr_card_foot {
+	width: 280px;
+	height: 80px;
+	background-color: ghostwhite;
+}
+.gr_card_photo {
+	position: absolute;
+	top: 50px;
+	left: 20px;
+}
+
+.gr_card_photo img {
+	width: 80px;
+	height: 80px;	
+}

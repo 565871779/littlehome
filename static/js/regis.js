@@ -21,14 +21,7 @@ $(function(){
 		})
 		$("input[name=username]").on("blur",function(){
 			let This = this;
-//				let passwd = 'A1a23%456';
-//      		let regpasswd = /^(?=.*\W+)(?=.*[a-z]+)(?=.*[A-Z]+).{6,16}$/;
-//      		console.log(passwd.match(regpasswd));
-//     			 //test
-//      		console.log(regpasswd.test(passwd));
-
-        		let regnum = /^[a-zA-Z0-9_-]{4,16}$/;
-     
+        		let regnum = /^[a-zA-Z0-9_-]{4,16}$/; 
         		let regtwo = regnum.test($(This).val());
 					if(!regtwo){
         			$(This).parent().next().addClass("red");
@@ -37,7 +30,7 @@ $(function(){
         		}else {
         			$(This).parent().next().html('');
         			$(".right").eq(0).css("display","inline-block");
-        			err1=0
+        			err1=0;
         		}
 				
 		})
@@ -51,9 +44,7 @@ $(function(){
 		$("input[name=password]").on("blur",function(){
 			//6-12位数字加字母组成
 			let regpasswd = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/;
-			
 			if(!(regpasswd.test($(this).val()))){
-				
 				$(this).parent().next().addClass("red");
         		$(this).parent().next().html('密码格式不对');
 				err2++
@@ -71,9 +62,7 @@ $(function(){
 			$(".right").eq(1).css("display","none");
 		})
 		$("input[name=tel]").on("blur",function(){
-			
 			let regtel= /^[1][3,4,5,7,8][0-9]{9}$/;
-			
 			if(!(regtel.test($(this).val()))){
 				$(this).parent().next().addClass("red");
         		$(this).parent().next().html('手机号格式不对');

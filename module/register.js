@@ -23,7 +23,7 @@ router.post('/',(req,res)=>{
 			let sql = "INSERT INTO user (uname,usex,utel,password,brithday) values (?,?,?,?,?)";
 			let data1 = [data.username,data.sex,data.tel,data.password,new Date().toLocaleString()]
 			conn.query(sql,data1,function(err,results){
-			if(err){
+			if(err){a
 			console.log(err);
 			return;
 			}
@@ -31,7 +31,7 @@ router.post('/',(req,res)=>{
 			conn.query(sql2,data.username,function(err,result){
 				req.session.uid = result[0].uid;
         		req.session.uname = result[0].uname;
-        		req.session.uhead = result[0].uhead;
+        		req.session.uhead = '/img/timg.gif';
         		req.session.admin = result[0].admin;
         		res.json({r:'ok'});
 			})

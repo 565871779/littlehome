@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8" />
-		<title>主页</title>
+		<title>home</title>
 
 		<% include head.html%>
 
@@ -13,8 +12,8 @@
 				<div class="list">
 					<p title="回复" class="layui-badge layui-bg-green"><span>2111</span></p>
 					<div class="listtext">
-						<p class="cardname">标题:致君尧舜上，再使风俗淳致君尧舜上，再使风俗淳想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁</p>
-						<p class="cardtext">杜甫的思<br />想核心是儒家的仁<br />政思想，<br />他有“<em>致君尧舜上，再使风俗淳</em>”的宏伟抱负。想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁</p>
+						<a class="cardname">标题</a>
+						<p>杜甫的思<br />想核心是儒家的仁<br />政思想，<br />他有“<em>致君尧舜上，再使风俗淳</em>”的宏伟抱负。想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁</p>
 					</div>
 					<div class="carduser">
 						<div class="carduser-img"></div>
@@ -42,10 +41,10 @@
 				<div class="list">
 					<p title="回复" class="layui-badge layui-bg-green"><span><%=c.tnum%></span></p>
 					<div class="listtext">
-						<p class="cardname">
+						<a href=<%= "/comment?tid="+c.tid%> class="cardname">
 							<%=c.title%>
-						</p>
-						<p class="cardtext">
+						</a>
+						<p>
 							<%-c.content%>
 						</p>
 					</div>
@@ -79,14 +78,13 @@
 					</div>
 					<div class="cardtime">
 						<p>
-							<%=c.lastreplaytime.toLocaleTimeString()%>
+							<%=c.lastreplaytime.toLocaleString()%>
 						</p>
 					</div>
 				</div>
 				<%}%>
 			</div>
-			
-			<!--页数显示-->
+
 			<div class="layui-btn-container page">
 				<button class="layui-btn">首页</button>
 				<button class="layui-btn"><i class="layui-icon">&#xe603;</i></button>
@@ -98,8 +96,6 @@
 				<button class="layui-btn"><i class="layui-icon">&#xe602;</i></button>
 				<button class="layui-btn">尾页</button>
 			</div>
-			
-			<!--侧边栏信息-->
 			<div class="aside1">
 				<div class="aside-massage">
 					<span>本吧信息</span>
@@ -130,7 +126,6 @@
 			</div>
 		</div>
 
-		<!--发表帖子及footer-->
 		<div class="last">
 			<div class="publish">
 				<div class="publish-head">
@@ -155,9 +150,9 @@
 		</div>
 		<script src="//unpkg.com/wangeditor/release/wangEditor.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-			let br = $("br");
+			//let br = $("br");
 			$(".list img").css("width", 150);
-			$(".listtext img").before(br);
+			//$(".listtext img").before(br);
 			var E = window.wangEditor;
 			var editor = new E('.publish-text');
 			editor.customConfig.uploadImgServer = '/uploads';
@@ -186,9 +181,62 @@
 					dataType: "JSON",
 					data: data1,
 					success: function(data) {
+						if(data.r=="No one"){
+						alert("请先登录");
+					}
+					if(data.r == 'ok') {
+						window.location.href = '/index';
+						alert("发帖成功！")
+					}
+				},
+				fail: function(err) {
+					console.log(err);
+
+				}
+			});
+
+			console.log(editor.txt.html())
+		})
+		$(".carddel a").click(function() {
+			
+			let This = this;
+			if(confirm("确认删除该贴吗?")) {
+				$.ajax({
+					type: "post",
+					url: "/publish/del",
+					async: true,
+					dataType: "JSON",
+					data: {tid:$(This).attr("data-tid")},
+					success: function(data) {
 						if(data.r == 'ok') {
 							window.location.href = '/index';
-							alert("发帖成功！")
+							alert("删除成功！")
+						}
+					},
+					fail: function(err) {
+						console.log(err);
+					}
+				});
+
+			}
+
+		})
+		$(".carddig a").click(function() {
+			let This = this;
+			if($(This).html()=="加精"){
+			if(confirm("确认将该贴加精吗?")) {
+				
+				
+				$.ajax({
+					type: "post",
+					url: "/publish/dig",
+					async: true,
+					dataType: "JSON",
+					data: {tid:$(This).attr("data-tid")},
+					success: function(data) {
+						if(data.r == 'ok') {
+							window.location.href = '/index';
+							alert("加精成功！")
 						}
 					},
 					fail: function(err) {
@@ -197,92 +245,36 @@
 					}
 				});
 
-				console.log(editor.txt.html())
-			})
-			$(".carddel a").click(function() {
-
-				let This = this;
-				if(confirm("确认删除该贴吗?")) {
-
-					$.ajax({
-						type: "post",
-						url: "/publish/del",
-						async: true,
-						dataType: "JSON",
-						data: {
-							tid: $(This).attr("data-tid")
-						},
-						success: function(data) {
-							if(data.r == 'ok') {
-								window.location.href = '/index';
-								alert("删除成功！")
-							}
-						},
-						fail: function(err) {
-							console.log(err);
-
+			}
+			}
+			if($(This).html()=="取消加精"){
+			if(confirm("确认将该贴加精取消吗?")) {
+				
+				
+				$.ajax({
+					type: "post",
+					url: "/publish/digcancel",
+					async: true,
+					dataType: "JSON",
+					data: {tid:$(This).attr("data-tid")},
+					success: function(data) {
+						if(data.r == 'ok') {
+							window.location.href = '/index';
+							alert("取消加精成功！")
 						}
-					});
-
-				}
-
-			})
-			$(".carddig a").click(function() {
-				let This = this;
-				if($(This).html() == "加精") {
-					if(confirm("确认将该贴加精吗?")) {
-
-						$.ajax({
-							type: "post",
-							url: "/publish/dig",
-							async: true,
-							dataType: "JSON",
-							data: {
-								tid: $(This).attr("data-tid")
-							},
-							success: function(data) {
-								if(data.r == 'ok') {
-									window.location.href = '/index';
-									alert("加精成功！")
-								}
-							},
-							fail: function(err) {
-								console.log(err);
-
-							}
-						});
+					},
+					fail: function(err) {
+						console.log(err);
 
 					}
-				}
-				if($(This).html() == "取消加精") {
-					if(confirm("确认将该贴加精取消吗?")) {
+				});
 
-						$.ajax({
-							type: "post",
-							url: "/publish/digcancel",
-							async: true,
-							dataType: "JSON",
-							data: {
-								tid: $(This).attr("data-tid")
-							},
-							success: function(data) {
-								if(data.r == 'ok') {
-									window.location.href = '/index';
-									alert("取消加精成功！")
-								}
-							},
-							fail: function(err) {
-								console.log(err);
+			}
+			}
 
-							}
-						});
+		})
+		// 读取 html
+	</script>
+	</body>
 
-					}
-				}
-
-			})
-			// 读取 html
-		</script>
-		</body>
-
-</html>
+	</html>

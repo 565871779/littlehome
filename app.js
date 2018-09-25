@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+global.async = require('async');
 global.md5 = require('md5');
 const svgCaptcha = require('svg-captcha');
 const multer = require('multer');
@@ -24,7 +25,7 @@ app.set('views', './views');
 global.conn = mysql.createConnection({
     host:'localhost',
     user:'root',
-    password:'a58893071',
+    password:'123456',
     port:3306,
     database:'smllhome'
 });
@@ -79,17 +80,31 @@ app.post('/uploads', upload.array('images', 1000), (req ,res)=>{
 // });
 
 //子路由
+
 //管理员用户登录
 app.use('/login', require('./module/login'));
+
 //注册界面子路由
 app.use('/register',require('./module/register'));
-//首页
+
+//首页 直接访问时也相当于访问首页
 app.use('/index', require('./module/index'));
 app.use('/', require('./module/index'));
+
+//首页搜索子路由
+app.use('/search',require('./module/search'));
+
+//评论子路由
+app.use('/comment',require('./module/comment'));
+
 //个人中心
 app.use('/userCenter', require('./module/userCenter'));
+
 //发帖
 app.use('/publish', require('./module/publish'));
+
+//个人中心资料编辑
+app.use('/edit',require('./module/edit'))
 
 //静态资源托管
 app.use('/uploads', express.static('uploads'));

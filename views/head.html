@@ -1,24 +1,36 @@
+
 		<link rel="stylesheet" type="text/css" href="/layui/css/layui.css" />
 		<script src="/layui/layui.js" type="text/javascript" charset="utf-8"></script>
 		<script src="http://lib.sinaapp.com/js/jquery/3.1.0/jquery-3.1.0.js" type="text/javascript" charset="utf-8"></script>
-		<link rel="stylesheet" type="text/css" href="/css/head.css" />
+		<script src="/layui/layui.js" type="text/javascript" charset="utf-8"></script>
 		<script src="/js/head.js" type="text/javascript" charset="utf-8"></script>
-
+		
+		<link rel="stylesheet" type="text/css" href="/css/head.css" 
+		
 	</head>
-
 	<body>
 		<ul class="layui-nav" lay-filter="" id="layui-nav">
-			<div class="layui-nav1">
+			<div class="layui-nav1" >
 				<img src="/img/24442-20180827110935292-1162717395.jpg" width="248px" height="60px" />
-				<li class="layui-nav-item layui-this">
-					<a href="">看吧</a>
+				<li class="layui-nav-item layui-this" data-dig = "<%=typeof dig%>" id="index">
+					<a href="/index">看吧</a>
 				</li>
 				<li class="layui-nav-item">
 					<a href="">图片</a>
 				</li>
-				<li class="layui-nav-item">
-					<a href="">精品</a>
+				<li class="layui-nav-item " id="digest">
+					<a href="/index/digest">精品</a>
 				</li>
+				<script type="text/javascript">
+				$(function(){
+					console.log(typeof $("#index").attr("data-dig"))
+				if ( $("#index").attr("data-dig")=="undefined") {
+				} else{					
+					$("#digest").addClass("layui-this");
+					$("#index").removeClass("layui-this");
+				}	
+				})
+				</script>
 				<li class="layui-nav-item">
 					<a href="">视频</a>
 				</li>
@@ -47,20 +59,20 @@
 			<div id="search1">
 				<form id="layui-form-pane" class="layui-form layui-form-pane">
 					<div class="layui-form-item">
-						<label class="layui-form-label">小家影吧</label>
+						<label class="layui-form-label">小家电影吧</label>
 						<div class="layui-input-block">
 							<input id="layui-input" type="text" name="search" placeholder="请输入关键词 " autocomplete="off" class="layui-input">
-							<button class="layui-btn" lay-filter="formDemo">搜索</button>
+							<button class="layui-btn search-btn" type="button" tylay-filter="formDemo">搜索</button>
 						</div>
 					</div>
 				</form>
 			</div>
 			<div class="layui-row layui-row1" id="display">
-				<img src="/img/123.gif " width="980px" height="180px" />
+				<img src="/img/123.gif" width="980px" height="180px" />
 				<div class="imgdiv1" id="imgdiv1">
 					<img id="img1" src="/img/timg.gif" width="160px" height="160px" />
 					<div class="littlehome">
-						<a href="">小家影吧</a>
+						<a href="">小家电影吧</a>
 					</div>
 					<div class="guanzhu">
 						<button class="layui-btn">+关注</button>

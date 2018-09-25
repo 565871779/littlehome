@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8" />
-		<title>回复</title>
-		<link rel="stylesheet" type="text/css" href="../static/layui/css/layui.css" />
-		<script src="../static/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<title>comment</title>
+		<link rel="stylesheet" type="text/css" href=" /layui/css/layui.css" />
+		<script src=" /layui/layui.js" type="text/javascript" charset="utf-8"></script>
 		<script src="http://lib.sinaapp.com/js/jquery/3.1.0/jquery-3.1.0.js" type="text/javascript" charset="utf-8"></script>
-		<link rel="stylesheet" type="text/css" href="../static/css/head.css" />
-		<script src="../static/js/head.js" type="text/javascript" charset="utf-8"></script>
-
+		<script src="//unpkg.com/wangeditor/release/wangEditor.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/js/comment.js"text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href=" /css/head.css" />
+		<script src=" /js/head.js" type="text/javascript" charset="utf-8"></script>
 	</head>
-
 	<body>
 		<ul class="layui-nav" lay-filter="" id="layui-nav">
 			<div class="layui-nav1">
-				<img src="../static/img/24442-20180827110935292-1162717395.jpg" width="248px" height="60px" />
+				<img src=" /img/24442-20180827110935292-1162717395.jpg" width="248px" height="60px" />
 				<li class="layui-nav-item layui-this">
 					<a href="">看吧</a>
 				</li>
@@ -31,19 +30,29 @@
 				<li class="layui-nav-item">
 					<a href="">群主</a>
 				</li>
+				<% if(!uname){%>
 				<li class="layui-nav-item layui-col-md-offset2">
-					<a href="">登录</a>
+					<a href="/login">登录</a>
 				</li>
 				<li class="layui-nav-item">
-					<a href="">注册</a>
+					<a href="/register">注册</a>
 				</li>
+				<%}%>
+				<% if(uname){%>
+					<li class="layui-nav-item layui-col-md-offset2">
+						<a href='/userCenter'><%=uname%></a>
+					</li>
+					<li class="layui-nav-item">
+						<a href='/tuichu'>退出</a>
+					</li>
+				<%}%>
 			</div>
 		</ul>
 		<div id="main1">
 			<div id="search1">
 				<form id="layui-form-pane" class="layui-form layui-form-pane">
 					<div class="layui-form-item">
-						<label class="layui-form-label">小家影吧</label>
+						<label class="layui-form-label">小家电影吧</label>
 						<div class="layui-input-block">
 							<input id="layui-input" type="text" name="search" placeholder="请输入关键词 " autocomplete="off" class="layui-input">
 							<button class="layui-btn" lay-filter="formDemo">搜索</button>
@@ -52,11 +61,11 @@
 				</form>
 			</div>
 			<div class="layui-row layui-row1">
-				<img src="../static/img/123.gif " width="980px" height="180px" />
+				<img src=" /img/123.gif " width="980px" height="180px" />
 				<div class="imgdiv1" id="imgdiv1">
-					<img id="img1" src="../static/img/timg.gif" width="160px" height="160px" />
+					<img id="img1" src=" /img/timg.gif" width="160px" height="160px" />
 					<div class="littlehome">
-						<a href="">小家影吧</a>
+						<a href="">小家电影吧</a>
 					</div>
 					<div class="guanzhu">
 						<button class="layui-btn">+关注</button>
@@ -81,94 +90,57 @@
 			</div>
 		</div>
 
-		<link rel="stylesheet" type="text/css" href="../static/css/comment.css" />
+		<link rel="stylesheet" type="text/css" href=" /css/comment.css" />
 		<div class="content1">
 			<!--评论显示区域-->
 			<div class="cardlist">
 				<div class="card-author">
-					<p>帖子主题帖子主题帖子主题帖子主题帖子主题帖子主题帖子主题</p>
+					<p><%=tie[0].title%></p>
 					<button class="layui-btn layui-btn-sm card-author-button1">只看楼主</button>
 					<button class="layui-btn layui-btn-sm card-author-button2">收藏</button>
 					<button class="layui-btn layui-btn-sm card-author-button3">回复</button>
 				</div>
 				<!--每条评论-->
 				<div class="list">
-					<!--评论内容-->
 					<div class="person-card">
+						<!--楼主-->
 						<div class="comment-text">
-							美丽的梦和美丽的诗一样 都是可遇而不可求的 常常在最没能料到的时刻里出现 我喜欢那样的梦 在梦里 一切都可以重新开始 一切都可以慢慢解释 心里甚至还能  胸怀中满溢著幸福 只因为你就在我眼前 对我微笑 一好像你我才初初相遇
+							<%-tie[0].content%>
 						</div>
 						<div class="comment-massage">
 							<span class="massage-jubao">举报</span>
 							<span>|</span>
-							<span class="massage-f">&nbsp;<span>17</span>楼&nbsp;</span>
-							<span class="massage-time">2019.09.08 15:55</span>
+							<span class="massage-f">&nbsp;<span><%=numb++%></span>楼&nbsp;</span>
+							<span class="massage-time"><%=tie[0].releasetime.toLocaleString()%></span>
 						</div>
 					</div>
 					<!--评论用户-->
 					<div class="person">
-						<img src="../static/img/timg.gif" />
-						<p>name</p>
+						<img src=<%=tie[0].uhead%> />
+						<p><%=tie[0].uname%></p>
 					</div>
 				</div>
+				<%for(let c of commen){%>
 				<div class="list">
 					<!--评论内容-->
 					<div class="person-card">
 						<div class="comment-text">
-							觉到所有被浪费的我微笑 一如当年 我真喜欢那样的梦 明明鲜喜和好像你我才初初相遇
+							<%-c.recontent%>
 						</div>
 						<div class="comment-massage">
 							<span class="massage-jubao">举报</span>
 							<span>|</span>
-							<span class="massage-f">&nbsp;<span>17</span>楼&nbsp;</span>
-							<span class="massage-time">2019.09.08 15:55</span>
+							<span class="massage-f">&nbsp;<span><%=numb++%></span>楼&nbsp;</span>
+							<span class="massage-time"><%=c.replaytime.toLocaleString()%></span>
 						</div>
 					</div>
 					<!--评论用户-->
 					<div class="person">
-						<img src="../static/img/timg.gif" />
-						<p>name</p>
+						<img src=<%=c.uhead%>>
+						<p><%=c.uname%></p>
 					</div>
 				</div>
-				<div class="list">
-					<!--评论内容-->
-					<div class="person-card">
-						<div class="comment-text">
-							常在最没能料到的时刻里出现 我喜欢那样的梦 在梦里 一切竟然都能重回时的狂喜和感激 胸怀中满溢著幸福 只因为你就在我眼前 对我微笑 一如当年 我真喜欢那样的梦 明明知道你已为我跋涉千里 却又觉得芳草鲜美 落英缤纷 好像你我才初初相遇
-						</div>
-						<div class="comment-massage">
-							<span class="massage-jubao">举报</span>
-							<span>|</span>
-							<span class="massage-f">&nbsp;<span>17</span>楼&nbsp;</span>
-							<span class="massage-time">2019.09.08 15:55</span>
-						</div>
-					</div>
-					<!--评论用户-->
-					<div class="person">
-						<img src="../static/img/timg.gif" />
-						<p>name</p>
-					</div>
-				</div>
-				<div class="list">
-					<!--评论内容-->
-					<div class="person-card">
-						<div class="comment-text">
-							还能梦 在梦里 一切都可以重新开始 一切都可以慢慢解释 心里甚至还能感能重回时的狂喜和感激 胸怀中满溢著幸福 只因为你就在我眼前 对我微笑 一如当年 我真喜欢那样的梦 明明知道你已为我跋涉千里 却又觉得芳草鲜美 落英缤纷 好像你我才初初相遇
-						</div>
-						<div class="comment-massage">
-							<span class="massage-jubao">举报</span>
-							<span>|</span>
-							<span class="massage-f">&nbsp;<span>17</span>楼&nbsp;</span>
-							<span class="massage-time">2019.09.08 15:55</span>
-						</div>
-					</div>
-					<!--评论用户-->
-					<div class="person">
-						<img src="../static/img/timg.gif" />
-						<p>name</p>
-					</div>
-				</div>
-
+				<%}%>
 				<!--页数显示-->
 				<div class="layui-btn-container page">
 					<button class="layui-btn">首页</button>
@@ -186,7 +158,7 @@
 				<div class="aside-massage">
 					<span>本吧信息</span>
 					<div class="look1">
-						<img src="../static/img/timg.gif" />
+						<img src=" /img/timg.gif" />
 					</div>
 					<div class="look2">
 						<div></div>
@@ -197,9 +169,9 @@
 						<p>10</p>
 					</div>
 				</div>
-				<img class="aside1-img" src="../static/img/22170839.png" />
-				<img class="aside1-img" src="../static/img/22170947.png" />
-				<img class="aside1-img lastimg" src="../static/img/22171023.png" />
+				<img class="aside1-img" src=" /img/22170839.png" />
+				<img class="aside1-img" src=" /img/22170947.png" />
+				<img class="aside1-img lastimg" src=" /img/22171023.png" />
 			</div>
 		</div>
 
@@ -213,9 +185,9 @@
 					<a class="publish6">贴吧协议及“七条底线” </a>
 				</div>
 				<from class="publish-input">
-					<div class="publish-text"><span>请输入评论内容</span></div>
+					<div class="publish-text" data-tid = <%=tie[0].tid%>><span>请输入评论内容</span></div>
 					<input type="checkbox" name="agree"><span>使用签名档</span>
-					<button class="layui-btn">发表</button>
+					<button class="layui-btn" id="publish">发表</button>
 				</from>
 			</div>
 
@@ -228,13 +200,6 @@
 				<a pv_code="0" href="/tb/zt/declare/" target="_blank">网络谣言警示</a>
 			</div>
 		</div>
-
-		<script src="//unpkg.com/wangeditor/release/wangEditor.min.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
-			var E = window.wangEditor;
-			var editor = new E('.publish-text');
-			editor.create();
-		</script>
 	</body>
 
 </html>

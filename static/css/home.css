@@ -105,10 +105,6 @@
 }
 
 .cardname {
-	max-width: 410px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;	
 	color: #2d64b3;
 	cursor: pointer;
 }
@@ -118,7 +114,7 @@
 	text-decoration: underline;
 }
 
-.cardtext {
+.listtext p {
 	margin-top: 10px;
 }
 
@@ -178,10 +174,12 @@
 
 .cardtime {
 	position: absolute;
-	top: 50px;
-	left: 700px;
+	bottom: 0px;
+	left: 560px;
 }
-
+.cardtime p{
+	width: 200px;
+}
 .cardback,
 .cardtime,
 .carduser {

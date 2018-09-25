@@ -1,3 +1,5 @@
+$(function(){
+	
 layui.use('element', function() {
 	var element = layui.element;
 });
@@ -14,3 +16,19 @@ window.onscroll = function() {
 		$(".layui-nav").css("position", "relative");
 	}
 }
+
+
+//首页的搜索功能
+$('.search-btn').click(function() {
+//$.ajax({
+//	url: '/search',
+//	type: 'get',
+//	dataType: 'JSON',
+//	data:{keyword:$("#layui-input").val()},
+//	success: function(result) {
+//		window.open('/search.html');
+//	}
+//	})
+		window.location.href ="http://localhost:8088/search?keyword="+$("#layui-input").val();
+	})
+})
