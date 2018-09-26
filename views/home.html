@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8" />
 		<title>home</title>
@@ -11,34 +12,7 @@
 		<script src="/js/gr_card.js" type="text/javascript" charset="utf-8"></script>
 		<div class="content1">
 			<div class="cardlist">
-				<div class="list">
-					<p title="回复" class="layui-badge layui-bg-green"><span>2111</span></p>
-					<div class="listtext">
-						<a class="cardname">标题</a>
-						<p>杜甫的思<br />想核心是儒家的仁<br />政思想，<br />他有“<em>致君尧舜上，再使风俗淳</em>”的宏伟抱负。想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁</p>
-					</div>
-					<div class="carduser">
-						<div class="carduser-img"></div>
-						<div class="carduser-name">楼主</div>
-					</div>
-					<div class="carddel">
-						<div class="cardback-name">
-							<a href="">删除</a>
-						</div>
-					</div>
-					<div class="carddig">
-						<div class="cardback-name">
-							<a href="">加精</a>
-						</div>
-					</div>
-					<div class="cardback">
-						<div class="cardback-img"></div>
-						<div class="cardback-name">最后回复人</div>
-					</div>
-					<div class="cardtime">
-						时间
-					</div>
-				</div>
+				
 				<%for(let c of clist){%>
 				<div class="list">
 					<p title="回复" class="layui-badge layui-bg-green"><span><%=c.tnum%></span></p>
@@ -87,18 +61,17 @@
 				<%}%>
 			</div>
 
+			<!--页数显示-->
 			<div class="layui-btn-container page">
-				<button class="layui-btn">首页</button>
-				<button class="layui-btn"><i class="layui-icon">&#xe603;</i></button>
-				<button class="layui-btn">1</button>
-				<button class="layui-btn">2</button>
-				<button class="layui-btn">3</button>
-				<button class="layui-btn">4</button>
-				<button class="layui-btn">5</button>
-				<button class="layui-btn"><i class="layui-icon">&#xe602;</i></button>
-				<button class="layui-btn">尾页</button>
+				<a href="/index?page=1"><button class="layui-btn">首页</button></a>
+				<a href="/index?page=<%=page-1%>"><button class="layui-btn"><i class="layui-icon">&#xe603;</i></button></a>
+				<% for(let p=start; p<=end; p++){ %>
+				<a href="/index?page=<%=p%>"><button <%- (page==p)?(' style="background-color:#02524b"'):''%> class="layui-btn"><%=p%></button></a>
+				<% } %>
+				<a href="/index?page=<%=(page*1+1 > totalpage) ? totalpage:(page*1+1) %>"><button class="layui-btn"><i class="layui-icon">&#xe602;</i></button></a>
+				<a href="/index?page=<%=totalpage%>"><button class="layui-btn">尾页</button></a>
 			</div>
-			
+
 			<!--侧边栏信息-->
 			<% include aside.html%>
 		</div>
@@ -123,7 +96,8 @@
 					<button class="layui-btn release-btn" id="publish" type="button">发表</button>
 				</from>
 			</div>
-	<% include footer.html%>
+
+			<% include footer.html%>
 		</div>
 		<div class="grcard" style="z-index: 999; display: none;">
 			<div class="gr_card_head">

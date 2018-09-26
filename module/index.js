@@ -1,16 +1,64 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', function(req,res){
-	let data = {};
-	data.uname = req.session.uname;
-	data.admin = req.session.admin;
+router.get('/', function(req, res) {
 	
-	let sql = "SELECT * FROM tie WHERE `status` = 1 ORDER BY lastreplaytime DESC; ";
-	conn.query(sql,function(err,results){
-		data.clist = results;	
-    	res.render('./home',data);});
-	})
+	console.log(req.query)
+	let pagenum = 10;
+    let page = req.query.page ? req.query.page : 3;
+    (page < 1) && (page = 1);
+    async.series({
+        nums: function (callback) {
+            let sql = 'SELECT COUNT(tid) AS nums FROM tie';
+            conn.query(sql, (err, result) => {
+                let totalpage = Math.ceil(result[0].nums / pagenum);
+                if (page > totalpage) {
+                    page = totalpage;
+                }
+                callback(null, result[0].nums);
+            });
+        },
+        lists: function (callback) {
+            let sql = 'SELECT * FROM tie WHERE `status` = 1 ORDER BY lastreplaytime DESC LIMIT ?, ?;';
+            conn.query(sql, [pagenum * (page - 1), pagenum], (err, results) => {
+                callback(null, results);
+            });
+        }
+    }, (err, data) => {
+    	data.uname = req.session.uname;
+    	data.admin = req.session.admin;
+    	data.clist = data.lists;
+        data.page = page;
+        data.totalpage = Math.ceil(data.nums / pagenum);
+        let showpage = 5;
+        let start = page - (showpage - 1) / 2;
+        let end = page * 1 + (showpage - 1) / 2;
+        if (start < 1) {
+            start = 1;
+            end = start + showpage - 1;
+        }
+        if (end > data.totalpage) {
+            end = data.totalpage;
+            start = end - showpage + 1;
+            if (start < 1) {
+                start = 1;
+            }
+        }
+        data.start = start;
+        data.end = end;
+//      console.log(data);
+        res.render('./home', data);
+    });
+    
+    
+    
+    
+//	let sql = "SELECT * FROM tie WHERE `status` = 1 ORDER BY lastreplaytime DESC;";
+//	conn.query(sql, function(err, results) {
+//		data.clist = results;
+//		res.render('./home', data);
+//	});
+})
 //退出功能
 router.get('/tuichu',function(req,res){
 		let data={};
@@ -87,8 +135,9 @@ router.get("/video", (req, res) => {
 		data.uname = req.session.uname;
 		data.admin = req.session.admin;
 		data.uhead = req.session.uhead;
-		res.render('./video', data);	});})
-
+		res.render('./video', data);
+  });
+})
 router.get("/img1", (req, res) => {
 	let sql = "SELECT * FROM tie WHERE `status` = 1 AND digest = 1 ORDER BY lastreplaytime DESC; ";
 	conn.query(sql, (err, results) => {
@@ -98,7 +147,9 @@ router.get("/img1", (req, res) => {
 		data.uname = req.session.uname;
 		data.admin = req.session.admin;
 		data.uhead = req.session.uhead;
-		res.render('./img1', data);	});})
+		res.render('./img1', data);
+  });
+})
 
 
 //取消关注用户操作
@@ -114,6 +165,18 @@ router.post('/cancel',(req,res)=>{
 			return;
 		}
 		res.json({r:"ok"});
-	})
+  });
+})
+router.get("/video", (req, res) => {
+	let sql = "SELECT * FROM tie WHERE `status` = 1 AND digest = 1 ORDER BY lastreplaytime DESC; ";
+	conn.query(sql, (err, results) => {
+		let data = {};
+		data.dig = 1;
+		data.clist = results;
+		data.uname = req.session.uname;
+		data.admin = req.session.admin;
+		data.uhead = req.session.uhead;
+		res.render('./video', data);
+	});
 })
 module.exports = router;
