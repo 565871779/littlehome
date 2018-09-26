@@ -1,6 +1,9 @@
- <% include head.html%>	
+<% include head.html%>	
  <link rel="stylesheet" href="/css/userCenter.css" />
  <script src="/js/userCenter.js" type="text/javascript" charset="utf-8"></script>
+ 	<div class="big">
+ 		
+ 	
 		<div id="center-img">
 			<div class="ziliao">
 					<a href="/edit" class="alink">编辑资料</a>
@@ -78,39 +81,40 @@
 			</div>
 			<div class="slide-div">
 					<div class="myLikes">
-						<h1 class="ihome_aside_title">我关注的人<span class="concern_num">(<a href="#">139</a>)</span></h1>
+						<h1 class="ihome_aside_title">我关注的人<span class="concern_num">(<a href="#"><%=gznum%></a>)</span></h1>
 						<ul style="margin-left: 8px; margin-top: 10px;" class="ulli">
+							
 							<li>
 								<img src="/img/oneone.jpg" alt="" width="45px" height="45px"/>
 							</li>
+							<%for(let gz of guanzhu){%>
 							<li>
-								<img src="/img/oneone.jpg" alt="" width="45px" height="45px"/>
+								<img src=<%=gz.uid2head%> alt="" width="45px" height="45px"/>
 							</li>
-							<li></li>
-							<li></li>
+							<%}%>
 						</ul>
 					</div>
 					<div class="myFans">
-						<h1 class="ihome_aside_title">关注我的人<span class="concern_num">(<a href="#">139</a>)</span></h1>
+						<h1 class="ihome_aside_title">关注我的人<span class="concern_num">(<a href="#"><%=fansnum%></a>)</span></h1>
 						<ul style="margin-left: 8px; margin-top: 10px;" class="ulli">
 							<li>
 								<img src="/img/oneone.jpg" alt="" width="45px" height="45px"/>
 							</li>
+							<%for(let fs of fans){%>
 							<li>
-								<img src="/img/oneone.jpg" alt="" width="45px" height="45px"/>
+								<img src=<%=fs.uid1head%> alt="" width="45px" height="45px"/>
 							</li>
+							<%}%>
 							<li></li>
 							<li></li>
 						</ul>
 					</div>
 					</div>
 			</div>
-			
+	</div>	
+	
 		<script type="text/javascript">
 			$('title').html('用户个人中心');
 		</script>
 	</body>
 </html>
-
-					
-				

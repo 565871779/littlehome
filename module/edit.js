@@ -36,7 +36,6 @@ router.post("/head-img",(req,res)=>{
 		//修改当前的session值
 		req.session.uhead = d.newhead;
 		res.json({r:"ok"});
-	})
-	
+	})	
 })
 module.exports = router;

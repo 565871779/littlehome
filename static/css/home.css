@@ -123,10 +123,12 @@
 
 .cardtime {
 	position: absolute;
-	top: 50px;
-	left: 700px;
+	bottom: 0px;
+	left: 560px;
 }
-
+.cardtime p{
+	width: 200px;
+}
 .cardback,
 .cardtime,
 .carduser {

@@ -4,7 +4,7 @@ const router = express.Router();
 router.get('/',function(req,res){
 	let data = req.query.tid;
 	let sql1 = `SELECT * FROM tie INNER JOIN user on tie.uid=user.uid where tid = ?`
-	let sql2 = `SELECT * from replay where tid=?`;
+	let sql2 = `SELECT * FROM replay r INNER JOIN user u on r.uid=u.uid where tid = ?`;
 	//非阻塞操作,应该在成功后的回调函数里写其他操作
 	conn.query(sql2,data,function(err,results){
 		conn.query(sql1,data,function(err1,result){
@@ -15,9 +15,9 @@ router.get('/',function(req,res){
 				redata.uname = req.session.uname;
 				redata.admin = req.session.admin;
 				redata.uhead = req.session.uhead;
+				console.log(results);
 				redata.commen = results;
 				res.render('./comment',redata);
-			
 				//设置评论楼层数,楼主默认是第一楼
 				
 			})

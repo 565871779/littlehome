@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8" />
-		<title>主页</title>
+		<title>home</title>
 
 		<% include head.html%>
 		<% include fixed.html%>
 		<link rel="stylesheet" type="text/css" href="/css/home.css" />
+		<link rel="stylesheet" type="text/css" href="/css/gr_card.css"/>
+		<script src="/js/gr_card.js" type="text/javascript" charset="utf-8"></script>
 		<div class="content1">
 			<div class="cardlist">
 				<div class="list">
 					<p title="回复" class="layui-badge layui-bg-green"><span>2111</span></p>
 					<div class="listtext">
-						<a class="cardname"><p class="cardname1">标题:</p></a>
-						<p class="cardtext">杜甫的思<br />想核心是儒家的仁<br />政思想，<br />他有“<em>致君尧舜上，再使风俗淳</em>”的宏伟抱负。想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁</p>
+						<a class="cardname">标题</a>
+						<p>杜甫的思<br />想核心是儒家的仁<br />政思想，<br />他有“<em>致君尧舜上，再使风俗淳</em>”的宏伟抱负。想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁想核心是儒家的仁</p>
 					</div>
 					<div class="carduser">
 						<div class="carduser-img"></div>
@@ -42,17 +43,16 @@
 				<div class="list">
 					<p title="回复" class="layui-badge layui-bg-green"><span><%=c.tnum%></span></p>
 					<div class="listtext">
-						<p class="cardname"><a href=<%= "/comment?tid="+c.tid%> class="cardname">
+						<a href=<%= "/comment?tid="+c.tid%> class="cardname">
 							<%=c.title%>
-						</a></p>
-						<p class="cardtext">
-						<p class="cardtext">
+						</a>
+						<p>
 							<%-c.content%>
 						</p>
 					</div>
 					<div class="carduser">
 						<div class="carduser-img"></div>
-						<div class="carduser-name">
+						<div class="carduser-name" data-id=<%=c.uid%>>
 							<%=c.tuname%>
 						</div>
 					</div>
@@ -86,8 +86,7 @@
 				</div>
 				<%}%>
 			</div>
-			
-			<!--页数显示-->
+
 			<div class="layui-btn-container page">
 				<button class="layui-btn">首页</button>
 				<button class="layui-btn"><i class="layui-icon">&#xe603;</i></button>
@@ -124,9 +123,24 @@
 					<button class="layui-btn release-btn" id="publish" type="button">发表</button>
 				</from>
 			</div>
-
-			<% include footer.html%>
+	<% include footer.html%>
 		</div>
+		<div class="grcard" style="z-index: 999; display: none;">
+			<div class="gr_card_head">
+				<div class="gr_card_head_button">
+				<button type="button" class="canorfans" style="background-color: red;">关注</button>
+				<button type="button" style="background-color: cornflowerblue;">私信</button>
+				</div>				
+			</div>
+			<div class="gr_card_foot">	
+				<p class="name" style="margin-left: 110px; margin-top: 3px; font-size: 13px ; color: #007DDB;">无海啸</p><br />
+				<p style="margin-left: 110px; margin-top: -16px; font-size: 13px ; color: gray;">吧龄：0.1|发帖:3</p>
+			</div>
+			<div class="gr_card_photo">
+				<img src="/img/1.jpg"/>
+			</div>
+		</div>
+		
 		<script type="text/javascript">
 				$(function(){
 					console.log(typeof $("#index").attr("data-dig"))
@@ -136,7 +150,11 @@
 					$("#index").removeClass("layui-this");
 				}	
 				})
-				</script>
+		</script>
+		
+		
+
+		
 		<script src="//unpkg.com/wangeditor/release/wangEditor.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			//let br = $("br");
