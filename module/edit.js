@@ -2,7 +2,11 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/',(req,res)=>{
-	res.render('./personal');
+	let data = {};
+	data.uhead = req.session.uhead;
+	data.uname = req.session.uname;
+	
+	res.render('./personal',data);
 })
 
 //修改基本信息

@@ -56,7 +56,7 @@ $(function(){
 			$(This).parent().next().addClass("red");
         		$(this).parent().next().html('两次密码输入不一致');
 				err++;
-		}else {
+		}else if($(This).val()){
 			$(this).parent().next().html(" ");
 			$(".right").eq(1).css("display","inline-block ");
 			err=0;

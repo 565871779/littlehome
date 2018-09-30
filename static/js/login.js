@@ -1,4 +1,5 @@
 $(function() {
+	//点击更新验证码
 	$('#codeimg').click(function () {
         $(this).attr('src', '/coder?' + new Date());
     });
@@ -12,6 +13,7 @@ $(function() {
 			data: $("#denglu").serialize(),
 			success: function(data) {
 				if(data.r == 'ok') {
+					//成功验证，跳转到首页，get请求
 					window.location.href = '/index';
 					alert("登录成功！")
 				} else if(data.r == 'u_not'){

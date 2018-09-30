@@ -10,8 +10,9 @@ body,html {
 	width: 1399px;
 	height: 4000px;
 	background: url('/img/bg_user01.jpg') center top no-repeat;
-	position: absolute;
 	background-color: white;
+	position: relative;
+	margin: 0 auto;
 }
 
 .ziliao {

@@ -15,7 +15,7 @@ const app = express();
 let hostname = 'http://localhost:8088';
 let secret = 'xiaojia.www.one';
 // 启用中间件
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: true}));//表单数据类型
 app.use(cookieParser(secret));
 //模板引擎设置
 app.engine('html', ejs.renderFile);
